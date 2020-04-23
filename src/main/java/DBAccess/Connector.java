@@ -14,6 +14,7 @@ public class Connector {
     private static String URL;
     private static String USERNAME;
     private static String PASSWORD;
+    private static String nameDB;
 
     private static Connection singleton;
 
@@ -39,9 +40,10 @@ public class Connector {
             PASSWORD = System.getenv("JDBC_PASSWORD");
         } else {
             // Localhost
-            URL = "jdbc:mysql://localhost:3306/useradmin?serverTimezone=CET&useSSL=false";
-            USERNAME = "root";
-            PASSWORD = "root";
+            nameDB = "fogCarport_db";
+            URL = "jdbc:mysql://localhost:3306/" + nameDB + "?serverTimezone=CET&useSSL=false";
+            USERNAME = "adminfog";
+            PASSWORD = "3011fog/";
         }
     }
 
