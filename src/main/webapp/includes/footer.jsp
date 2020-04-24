@@ -1,10 +1,4 @@
 
-
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
 <style>
     .footer {
         position: fixed;
