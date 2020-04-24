@@ -4,7 +4,7 @@
         position: fixed;
         left: 0;
         bottom: 0;
-        height: 15%;
+        height: 8%;
         width: 100%;
         background-color: #014687;
         color: gray;
