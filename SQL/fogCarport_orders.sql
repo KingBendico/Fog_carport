@@ -6,4 +6,4 @@ CREATE TABLE `orders` (
   `height` int NOT NULL,
   `depth` int NOT NULL,
   PRIMARY KEY (`orderId`)
-)
+  );
