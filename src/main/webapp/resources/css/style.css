@@ -2,3 +2,23 @@
     background-color: #014687
 
 }
+
+body section { 
+
+padding-top:40px!important;
+padding-bottom:66px!important;
+background-color:#f8f8f8
+
+}
+
+
+.footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 8%;
+        width: 100%;
+        background-color: #014687;
+        color: gray;
+        text-align: center;
+    }
