@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@include file="includes/header.jsp" %>
+<%@include file="../includes/header.jsp" %>
 
 <br>
 <div class="row">
@@ -51,7 +51,7 @@
                             <div class="row">
                                 <div class="col-md-12" data-form-table-to-div="">
 
-                                    <form action="FrontController" name="measurements" method="POST"
+                                    <form action="FrontController" name="flatMeasurements" method="POST"
                                           class="ng-pristine ng-valid">
                                         <input type="hidden" name="target" value="measurements">
 
@@ -230,6 +230,12 @@
                                             </div>
 
                                             <div class="form-group">
+                                                <div class="col-md-12 col-xs-12">
+                                                    <hr>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
                                                 <div class="col-md-6 col-xs-12">
 
                                                     <div class="col-md-6 col-xs-12">
@@ -265,4 +271,4 @@
     ${requestScope.error}
 </c:if>
 
-<%@include file="includes/footer.jsp" %>
+<%@include file="../includes/footer.jsp" %>
