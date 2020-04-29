@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<h1 align="center">Dine målinger:</h1>
+<h1 align="center">Dine valg:</h1>
 
 
 <br>

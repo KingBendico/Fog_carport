@@ -17,6 +17,9 @@ abstract class Command {
         commands.put( "carportRaised", new CarportRaised());
         commands.put( "carportFlat", new CarportFlat());
         commands.put( "carportStandard", new CarportStandard());
+        commands.put( "contact", new Contact());
+        commands.put("loginpage", new LoginPage());
+        commands.put("newUser", new NewUser());
 
     }
 

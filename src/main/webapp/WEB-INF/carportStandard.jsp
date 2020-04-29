@@ -3,8 +3,12 @@
 <%@include file="../includes/header.jsp" %>
 
 
-<br>
-<div class="row">
+<div class="jumbotron text-center" style="padding: 2px!important;">
+    <br>
+    <h1>Standard Carporte</h1>
+    <br>
+</div>
+
     <div class="col-sm-12" align="center">
         <div class="btn-group btn-group-toggle">
 
@@ -23,7 +27,7 @@
             </label>
         </div>
     </div>
-</div>
+
 <br>
 
 

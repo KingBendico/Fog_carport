@@ -3,8 +3,13 @@
 <%@include file="../includes/header.jsp" %>
 
 
-<br>
-<div class="row">
+<div class="jumbotron text-center" style="padding: 2px!important;">
+    <br>
+    <h1>Carport med rejsning</h1>
+    <br>
+</div>
+
+
     <div class="col-sm-12" align="center">
         <div class="btn-group btn-group-toggle">
 
@@ -23,19 +28,16 @@
             </label>
         </div>
     </div>
-</div>
-<br>
 
-<div class="form-group">
-    <div class="col-md-12 col-xs-12">
-        <h2>
-            Ønsket carport mål:
-        </h2>
-    </div>
-</div>
+<br>
 
 
 <section>
+
+    <p class="h3 text-center">
+        Ønsket carport mål
+    </p>
+
     <div class="container">
         <div class="row">
             <div class="pageheadline">

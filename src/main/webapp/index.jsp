@@ -1,263 +1,74 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@include file="includes/header.jsp" %>
+<div class="jumbotron text-center" style="padding: 2px!important;">
+    <br>
+    <h1>Velkommen til Fog Carporte!</h1>
+    <br>
+</div>
 
-<br>
-<div class="row">
-    <div class="col-sm-12" align="center">
-        <div class="btn-group btn-group-toggle">
+<div class="col-xs-1 text-center" >
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-secondary"  onclick="window.location='FrontController?target=carportFlat';">Carport med fladt tag</button>
+    <button type="button" class="btn btn-secondary" onclick="window.location='FrontController?target=carportRaised';">Carport med rejsning </button>
 
-            <label class="btn btn-secondary active">
-                <input type="radio" name="FlatCarport" id="FlatCarport"
-                       onclick="window.location='FrontController?target=carportFlat';" checked/> Carport med fladt tag
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="RaisedCarport" id="RaisedCarport"
-                       onclick="window.location='FrontController?target=carportRaised';"/> Carport med
-                rejsning
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="StandardCarport" id="StandardCarport"
-                       onclick="window.location='FrontController?target=carportStandard';"/> Standard carporte
-            </label>
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Carport
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="FrontController?target=carportFlat">med fladt tag</a>
+            <a class="dropdown-item" href="FrontController?target=carportRaised">med rejsning</a>
+            <a class="dropdown-item" href="FrontController?target=carportStandard">standard carport</a>
         </div>
     </div>
 </div>
-<br>
-
-
-<div class="form-group">
-    <div class="col-md-12 col-xs-12">
-        <h2>
-            Ønsket carport mål:
-        </h2>
-    </div>
 </div>
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="pageheadline">
+<br>
 
-            </div>
-
-            <div class="col-md-9">
-
-                <div>
-                    <div>
-
-
-                        <div class="formbuilder-block">
-                            <div class="row">
-                                <div class="col-md-12" data-form-table-to-div="">
-
-                                    <form action="FrontController" name="measurements" method="POST"
-                                          class="ng-pristine ng-valid">
-                                        <input type="hidden" name="target" value="measurements">
-
-                                        <div id="table" class="form-horizontal col-md-12 col-xs-12">
-
-
-                                            <div class="form-group">
-                                                <div class="col-md-12 col-xs-12">
-
-
-                                                    <label title="Carport bredde" for="Input_694650445">
-                                                        Carport bredde
-                                                    </label>
-                                                    <select class="form-control" id="Input_694650445"
-                                                            name="Carport_bredde"
-                                                            title="Carport bredde">
-                                                        <option selected="selected" value="">Vælg bredde</option>
-                                                        <option value="240 cm">240 cm</option>
-                                                        <option value="270 cm">270 cm</option>
-                                                        <option value="300 cm">300 cm</option>
-                                                        <option value="330 cm">330 cm</option>
-                                                        <option value="360 cm">360 cm</option>
-                                                        <option value="390 cm">390 cm</option>
-                                                        <option value="420 cm">420 cm</option>
-                                                        <option value="450 cm">450 cm</option>
-                                                        <option value="480 cm">480 cm</option>
-                                                        <option value="510 cm">510 cm</option>
-                                                        <option value="540 cm">540 cm</option>
-                                                        <option value="570 cm">570 cm</option>
-                                                        <option value="600 cm">600 cm</option>
-                                                        <option value="630 cm">630 cm</option>
-                                                        <option value="660 cm">660 cm</option>
-                                                        <option value="690 cm">690 cm</option>
-                                                        <option value="720 cm">720 cm</option>
-                                                        <option value="750 cm">750 cm</option>
-                                                    </select>
-                                                    <span class="field-validation-valid"
-                                                          data-valmsg-for="Carport_bredde_7ff01a8f6940485598af35f558edbcb5"
-                                                          data-valmsg-replace="true"></span>
-
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12 col-xs-12">
-
-
-                                                    <label title="Carport længde" for="Input_694650445">
-                                                        Carport længde
-                                                    </label>
-                                                    <select class="form-control" id="Input_694650445"
-                                                            name="Carport_laengde"
-                                                            title="Carport længde">
-                                                        <option selected="selected" value="">Vælg længde</option>
-                                                        <option value="240 cm">240 cm</option>
-                                                        <option value="270 cm">270 cm</option>
-                                                        <option value="300 cm">300 cm</option>
-                                                        <option value="330 cm">330 cm</option>
-                                                        <option value="360 cm">360 cm</option>
-                                                        <option value="390 cm">390 cm</option>
-                                                        <option value="420 cm">420 cm</option>
-                                                        <option value="450 cm">450 cm</option>
-                                                        <option value="480 cm">480 cm</option>
-                                                        <option value="510 cm">510 cm</option>
-                                                        <option value="540 cm">540 cm</option>
-                                                        <option value="570 cm">570 cm</option>
-                                                        <option value="600 cm">600 cm</option>
-                                                        <option value="630 cm">630 cm</option>
-                                                        <option value="660 cm">660 cm</option>
-                                                        <option value="690 cm">690 cm</option>
-                                                        <option value="720 cm">720 cm</option>
-                                                        <option value="750 cm">750 cm</option>
-                                                        <option value="780 cm">780 cm</option>
-                                                    </select>
-                                                    <span class="field-validation-valid"
-                                                          data-valmsg-for="Carport_laengde_3bafa64f20f64bf4b9094e8ca97fc727"
-                                                          data-valmsg-replace="true"></span>
-
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12 col-xs-12">
-
-
-                                                    <label title="Tag" for="Input_694650445">
-                                                        Tag
-                                                    </label>
-                                                    <select class="form-control" id="Input_694650445" name="Tag"
-                                                            title="Tag">
-                                                        <option selected="selected" value="Plasttrapezplader">
-                                                            Plasttrapezplader
-                                                        </option>
-
-                                                        + </select>
-                                                    <span class="field-validation-valid"
-                                                          data-valmsg-for="Tag_390c7f42911a44348f28de633874375f"
-                                                          data-valmsg-replace="true"></span>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-md-12 col-xs-12">
-
-
-                                                    <label title="Redskabsrum bredde" for="Input_694650445">
-                                                        Redskabsrum bredde
-                                                    </label>
-                                                    <select class="form-control" id="Input_694650445"
-                                                            name="Redskabsrum_bredde" title="Redskabsrum bredde">
-                                                        <option selected="selected" value="Ønsker ikke redskabsrum">
-                                                            Ønsker
-                                                            ikke redskabsrum
-                                                        </option>
-                                                        <option value="210 cm">210 cm</option>
-                                                        <option value="240 cm">240 cm</option>
-                                                        <option value="270 cm">270 cm</option>
-                                                        <option value="300 cm">300 cm</option>
-                                                        <option value="330 cm">330 cm</option>
-                                                        <option value="360 cm">360 cm</option>
-                                                        <option value="390 cm">390 cm</option>
-                                                        <option value="420 cm">420 cm</option>
-                                                        <option value="450 cm">450 cm</option>
-                                                        <option value="480 cm">480 cm</option>
-                                                        <option value="510 cm">510 cm</option>
-                                                        <option value="540 cm">540 cm</option>
-                                                        <option value="570 cm">570 cm</option>
-                                                        <option value="600 cm">600 cm</option>
-                                                        <option value="630 cm">630 cm</option>
-                                                        <option value="660 cm">660 cm</option>
-                                                        <option value="690 cm">690 cm</option>
-                                                        <option value="720 cm">720 cm</option>
-                                                    </select>
-                                                    <span class="field-validation-valid"
-                                                          data-valmsg-for="Redskabsrum_bredde_b1e0bf706b6946668c81f84b5ea2d263"
-                                                          data-valmsg-replace="true"></span>
-
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12 col-xs-12">
-
-                                                    <label title="Redskabsrum længde" for="Input_694650445">
-                                                        Redskabsrum længde
-                                                    </label>
-                                                    <select class="form-control" id="Input_694650445"
-                                                            name="Redskabsrum_laengde" title="Redskabsrum længde">
-                                                        <option selected="selected" value="Ønsker ikke redskabsrum">
-                                                            Ønsker
-                                                            ikke redskabsrum
-                                                        </option>
-                                                        <option value="150 cm">150 cm</option>
-                                                        <option value="180 cm">180 cm</option>
-                                                        <option value="210 cm">210 cm</option>
-                                                        <option value="240 cm">240 cm</option>
-                                                        <option value="270 cm">270 cm</option>
-                                                        <option value="300 cm">300 cm</option>
-                                                        <option value="330 cm">330 cm</option>
-                                                        <option value="360 cm">360 cm</option>
-                                                        <option value="390 cm">390 cm</option>
-                                                        <option value="420 cm">420 cm</option>
-                                                        <option value="450 cm">450 cm</option>
-                                                        <option value="480 cm">480 cm</option>
-                                                        <option value="510 cm">510 cm</option>
-                                                        <option value="540 cm">540 cm</option>
-                                                        <option value="570 cm">570 cm</option>
-                                                        <option value="600 cm">600 cm</option>
-                                                        <option value="630 cm">630 cm</option>
-                                                        <option value="660 cm">660 cm</option>
-                                                        <option value="690 cm">690 cm</option>
-                                                    </select>
-                                                    <span class="field-validation-valid"
-                                                          data-valmsg-for="Redskabsrum_laengde_906f5c0caf40445784db4c347e7660d8"
-                                                          data-valmsg-replace="true"></span>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-md-6 col-xs-12">
-
-                                                    <div class="col-md-6 col-xs-12">
-                                                        <input type="Submit" name="SubmitFlat" title="Submit"
-                                                               value="Submit"
-                                                               class="btn btn-primary">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" align="center">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-50" src="resources/img/carport1.png" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-50" src="resources/img/carport2.png" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-50" src="resources/img/carport3.png" alt="Third slide">
         </div>
 
+        <div class="carousel-item">
+            <img class="d-block w-50" src="resources/img/carport4.png" alt="Fourth slide">
+        </div>
+
+        <div class="carousel-item">
+            <img class="d-block w-50" src="resources/img/carport5.png" alt="Fifth slide">
+        </div>
+
+        <div class="carousel-item">
+            <img class="d-block w-50" src="resources/img/carport6.png" alt="Sixth slide">
+        </div>
 
     </div>
-    </div>
-</section>
-<br>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
 
 
 <c:if test="${requestScope.error!= null}">
