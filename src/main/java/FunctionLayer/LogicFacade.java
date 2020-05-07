@@ -1,6 +1,10 @@
 package FunctionLayer;
 
+import DBAccess.DataMapper;
 import DBAccess.UserMapper;
+
+import java.sql.SQLException;
+import java.util.HashMap;
 
 /**
  * The purpose of LogicFacade is to...
@@ -16,6 +20,9 @@ public class LogicFacade {
         User user = new User(email, password, "customer");
         UserMapper.createUser( user );
         return user;
+    }
+    public static HashMap<Integer,Materials> getMaterials() throws LoginSampleException {
+        return DataMapper.getMaterials();
     }
 
 }

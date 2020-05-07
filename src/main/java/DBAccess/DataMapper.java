@@ -8,12 +8,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DataMapper {
 
-    public static ArrayList<Materials> getMaterials() throws LoginSampleException {
+    public static HashMap getMaterials() throws LoginSampleException {
 
-        ArrayList<Materials> materials = new ArrayList<>();
+        HashMap<Integer,Materials> materials = new HashMap<>();
 
         try{
             Connection con = Connector.connection();
@@ -29,7 +30,7 @@ public class DataMapper {
                 String unit = rs.getString("unit");
                 String description = rs.getString("description");
                 Materials material = new Materials(materialId, name, length, count, unit, description);
-                materials.add(material);
+                materials.put(materialId,material);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new LoginSampleException(ex.getMessage());

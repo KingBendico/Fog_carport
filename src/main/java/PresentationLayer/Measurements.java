@@ -7,7 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
+
+import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.MaterialCalculator;
+import FunctionLayer.Materials;
 
 // @WebServlet(name = "Measurements", urlPatterns = {"/Measurements"})
 public class Measurements extends Command {
@@ -15,6 +20,11 @@ public class Measurements extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
         HttpSession session = request.getSession();
+        HashMap<Integer, Materials> MaterialList = MaterialCalculator.MaterialList();
+        MaterialList.toString();
+        //Her skal MaterialList genneløbes og printes pænt.
+
+
 
         String flatMeasurements = request.getParameter("flatMeasurements");
         String raisedMeasurements = request.getParameter("raisedMeasurements");
@@ -41,6 +51,7 @@ public class Measurements extends Command {
 
             session.setAttribute("shedWidth", shedWidth);
             session.setAttribute("shedLength", shedLength);
+
 
 
             //     request.getRequestDispatcher("WEB-INF/measurements.jsp").forward(request, response);
