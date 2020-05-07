@@ -14,7 +14,7 @@
         <div class="col-md-6">
             <div class="container">
                 <form class="form-signin">
-
+                    <input type="hidden" name="target" value="register">
 
                 <%--    <h1 class="h3 mb-3 font-weight-normal">Login</h1>--%>
                     <label for="inputEmail" class="sr-only">Brugernavn (E-mail)</label>
