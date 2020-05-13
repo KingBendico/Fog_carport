@@ -11,17 +11,8 @@
 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
     <button type="button" class="btn btn-secondary"  onclick="window.location='FrontController?target=carportFlat';">Carport med fladt tag</button>
     <button type="button" class="btn btn-secondary" onclick="window.location='FrontController?target=carportRaised';">Carport med rejsning </button>
+    <button type="button" class="btn btn-secondary" onclick="window.location='FrontController?target=carportStandard';">Standard carporte</button>
 
-    <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Carport
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" href="FrontController?target=carportFlat">med fladt tag</a>
-            <a class="dropdown-item" href="FrontController?target=carportRaised">med rejsning</a>
-            <a class="dropdown-item" href="FrontController?target=carportStandard">standard carport</a>
-        </div>
-    </div>
 </div>
 </div>
 

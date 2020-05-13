@@ -7,11 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- The purpose of Login is to...
 
- @author kasper
- */
 public class Login extends Command {
 
     @Override
@@ -27,7 +23,20 @@ public class Login extends Command {
         session.setAttribute("email", email);  // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
 
 
-        return user.getRole() + "page";
+    //    return user.getRole() + "page";
+
+            switch (user.getRole()) {
+        case "10":
+            return "administrator";
+        case "20":
+            return "employee";
+        case "30":
+            return "customer";
+        default:
+            session.setAttribute("error", "User role does not exist");
+            return "index";
     }
 
+
+}
 }
