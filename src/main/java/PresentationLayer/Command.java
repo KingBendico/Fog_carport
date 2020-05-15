@@ -20,6 +20,8 @@ abstract class Command {
         commands.put( "contact", new Contact());
         commands.put("loginpage", new LoginPage());
         commands.put("newUser", new NewUser());
+        commands.put("drawing", new Drawing());
+
 
     }
 
