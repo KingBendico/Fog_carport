@@ -57,4 +57,13 @@ public abstract class Carport {
     public void setMaterialList(HashMap<Integer, Materials> materialList) {
         this.materialList = materialList;
     }
+
+    @Override
+    public String toString() {
+        String constring ="";
+        for (int i = 0; i < materialList.size(); i++){
+            constring += materialList.get(i).getName() + " " + materialList.get(i).getName() + "/n";
+        }
+        return constring;
+    }
 }
