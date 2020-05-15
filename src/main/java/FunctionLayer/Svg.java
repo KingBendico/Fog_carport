@@ -1,25 +1,23 @@
 package FunctionLayer;
 
 public class Svg {
+    private int x;
+    private int y;
     private int length; //width     (længde på carporten på x-aksen)
     private int height; //height    (bredde på carporten på y-aksen)
     private String viewBox;
-    private int x;
-    private int y;
     private StringBuilder svg = new StringBuilder();
 
     private final String headerTemplate = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" height=\"%s\" width=\"%s\" viewBox=\"%s\" preserveAspectRatio=\"xMinYMin\">";
     private final String frameTemplate = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"1000\" height=\"1000\" viewBox=\"%s\" preserveAspectRatio=\"xMinYMin meet\">";
     private final String rectTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:#000000; fill: #ffffff\" />";
-    private final String strapTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:000000; fill: #ffffff\" />";
 
-
-    public Svg(int length, int height, String viewBox, int x, int y) {
+    public Svg(int x, int y, int length, int height, String viewBox) {
+        this.x = x;
+        this.y = y;
         this.length = length;
         this.height = height;
         this.viewBox = viewBox;
-        this.x = x;
-        this.y = y;
         svg.append(String.format(headerTemplate, length, height, viewBox));
     }
 
@@ -34,8 +32,16 @@ public class Svg {
         svg.append(String.format(frameTemplate, viewBox));
     }
 
-    public void addStrap(){
-        svg.append(String.format(strapTemplate));
+    public void addStrap(int x, int y, int length, int height){
+        svg.append(String.format(rectTemplate, x, y, length, height));
+    }
+
+    public void addRafter(int x, int y, int length, int height){
+        svg.append(String.format(rectTemplate, x, y, length, height));
+    }
+
+    public void addPole(int x, int y, int length, int height){
+        svg.append(String.format(rectTemplate, x, y, length, height));
     }
 
     public int getLength() {
