@@ -21,19 +21,19 @@
 <section>
     <div align="center">
         <h5>
-    Carport bredde: ${sessionScope.carportWidth}
-    <br>
-    Carport længde: ${sessionScope.carportLength}
-    <br>
-    Tag: ${sessionScope.roof}
-<% if(request.getParameter("Taghaeldning") != null) { %>
-    <br>
-    Taghældning: ${sessionScope.roofPitch}
-<% } %>
-    <br>
-    Redskabsrum bredde: ${sessionScope.shedWidth}
-    <br>
-    Redskabsrum længde: ${sessionScope.shedLength}
+            Carport bredde: ${sessionScope.carportWidth}
+            <br>
+            Carport længde: ${sessionScope.carportLength}
+            <br>
+            Tag: ${sessionScope.roof}
+            <% if (request.getParameter("Taghaeldning") != null) { %>
+            <br>
+            Taghældning: ${sessionScope.roofPitch}
+            <% } %>
+            <br>
+            Redskabsrum bredde: ${sessionScope.shedWidth}
+            <br>
+            Redskabsrum længde: ${sessionScope.shedLength}
         </h5>
     </div>
 </section>
@@ -41,7 +41,7 @@
 
 <br>
 
-<c:if test = "${requestScope.error!= null}" >
+<c:if test="${requestScope.error!= null}">
     <h2>Error ! </h2>
     ${requestScope.error}
 </c:if>
