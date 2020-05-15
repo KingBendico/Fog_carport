@@ -3,6 +3,7 @@ package DBAccess;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  The purpose of Connector is to...
@@ -40,11 +41,13 @@ public class Connector {
             PASSWORD = System.getenv("JDBC_PASSWORD");
         } else {
             // Localhost
-            nameDB = "fogCarport_db";
+            nameDB = "fogcarport_db";
             URL = "jdbc:mysql://localhost:3306/" + nameDB + "?serverTimezone=CET&useSSL=false";
             USERNAME = "adminfog";
             PASSWORD = "3011fog/";
         }
     }
+
+
 
 }
