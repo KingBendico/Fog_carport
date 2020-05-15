@@ -9,26 +9,16 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 
-import FunctionLayer.LogicFacade;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.MaterialCalculator;
-import FunctionLayer.Materials;
+import FunctionLayer.*;
 
 // @WebServlet(name = "Measurements", urlPatterns = {"/Measurements"})
 public class Measurements extends Command {
 
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
-
         HttpSession session = request.getSession();
-        HashMap<Integer, Materials> MaterialList = MaterialCalculator.MaterialList();
-        MaterialList.toString();
-        //Her skal MaterialList genneløbes og printes pænt.
-
-
 
         String flatMeasurements = request.getParameter("flatMeasurements");
         String raisedMeasurements = request.getParameter("raisedMeasurements");
-
 
             String carportWidth = request.getParameter("Carport_bredde");
             String carportLength = request.getParameter("Carport_laengde");
@@ -37,10 +27,8 @@ public class Measurements extends Command {
             // only for carportFlat
             String roofPitch = request.getParameter("Taghaeldning");
 
-
             String shedWidth = request.getParameter("Redskabsrum_bredde");
             String shedLength = request.getParameter("Redskabsrum_laengde");
-
 
             session.setAttribute("carportWidth", carportWidth);
             session.setAttribute("carportLength", carportLength);
@@ -51,6 +39,28 @@ public class Measurements extends Command {
 
             session.setAttribute("shedWidth", shedWidth);
             session.setAttribute("shedLength", shedLength);
+
+            //Konstruerer Carport objekter af den pågældende type
+            Carport carport;
+            if(Integer.parseInt(roofPitch)==0) {
+                if (Integer.parseInt(shedLength) == 0) {
+                    carport = new CarportFlatRoof(Integer.parseInt(carportLength), Integer.parseInt(carportWidth), 0, 0, new HashMap<>());
+                    carport.setMaterialList(MaterialCalculator.MaterialList(carport));
+                } else{
+                    carport = new CarportFlatRoof(Integer.parseInt(carportLength), Integer.parseInt(carportWidth), Integer.parseInt(shedLength), Integer.parseInt(shedWidth), new HashMap<>());
+                    carport.setMaterialList(MaterialCalculator.MaterialList(carport));
+                }
+            }else{
+                if(Integer.parseInt(shedLength)==0){
+                    carport = new CarportRaisedRoof(Integer.parseInt(carportLength), Integer.parseInt(carportWidth), 0, 0, new HashMap<>(), Integer.parseInt(roofPitch));
+                    carport.setMaterialList(MaterialCalculator.MaterialList(carport));
+                }else {
+                    carport = new CarportRaisedRoof(Integer.parseInt(carportLength), Integer.parseInt(carportWidth), Integer.parseInt(shedLength), Integer.parseInt(shedWidth), new HashMap<>(), Integer.parseInt(roofPitch));
+                    carport.setMaterialList(MaterialCalculator.MaterialList(carport));
+                }
+            }
+            session.setAttribute("carport",carport);
+
 
 
 
