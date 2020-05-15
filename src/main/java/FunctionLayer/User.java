@@ -50,6 +50,14 @@ public class User {
         this.role = role;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     public int getId() {
         return userId;
     }
@@ -83,6 +91,7 @@ public class User {
     }
 
     public String toString() {
+
         return "User{" + "username=" + ", password=" + password + ", email=" + email + '}';
     }
 

@@ -13,14 +13,14 @@
     <div align="center">
         <div class="col-md-6">
             <div class="container">
-                <form class="form-signin">
+                <form class="form-signin" action="FrontController" method="POST">
                     <input type="hidden" name="target" value="login">
 
                 <%--    <h1 class="h3 mb-3 font-weight-normal">Login</h1>--%>
                     <label for="inputEmail" class="sr-only">Brugernavn (E-mail)</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
                     <label for="inputPassword" class="sr-only">Adgangskode</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
                     <div class="checkbox mb-3">
                         <label>
                             <input type="checkbox" value="remember-me"> Husk mig
