@@ -1,10 +1,7 @@
-<%-- 
-    Document   : customerpage
-    Created on : Aug 22, 2017, 2:33:37 PM
-    Author     : kasper
---%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@include file="../includes/header.jsp" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,3 +20,10 @@
         You are now logged in as a customer of our wonderful site.
     </body>
 </html>
+
+<c:if test="${requestScope.error!= null}">
+    <h2>Error ! </h2>
+    ${requestScope.error}
+</c:if>
+
+<%@include file="../includes/footer.jsp" %>
