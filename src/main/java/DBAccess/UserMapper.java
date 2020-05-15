@@ -35,14 +35,17 @@ public class UserMapper {
 
     public static User login( String email, String password ) throws LoginSampleException {
         try {
+
             Connection con = Connector.connection();
             String SQL = "SELECT UserId, RoleId FROM Users "
                     + "WHERE Email=? AND UserPassword=?";
 
             PreparedStatement ps = con.prepareStatement( SQL );
+            System.out.println(ps.toString());
+
             ps.setString( 1, email );
             ps.setString( 2, password );
-            ResultSet rs = ps.executeQuery();
+             ResultSet rs = ps.executeQuery();
             if ( rs.next() ) {
                 String role = rs.getString( "RoleId" );
                 int id = rs.getInt( "UserId" );

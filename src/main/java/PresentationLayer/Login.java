@@ -23,15 +23,25 @@ public class Login extends Command {
         session.setAttribute("email", email);  // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
 
 
+        session.setAttribute( "user", user );
+        session.setAttribute( "role", user.getRole() );
+        session.setAttribute("email", email);
+        session.setAttribute("name", user.getFullName());
+        session.setAttribute("phone", user.getPhone());
+        session.setAttribute("address", user.getAddress());
+        session.setAttribute("userId", user.getUserId());
+
+
+
     //    return user.getRole() + "page";
 
             switch (user.getRole()) {
         case "10":
-            return "administrator";
+            return "adminpage";
         case "20":
-            return "employee";
+            return "employeepage";
         case "30":
-            return "customer";
+            return "customerpage";
         default:
             session.setAttribute("error", "User role does not exist");
             return "index";
