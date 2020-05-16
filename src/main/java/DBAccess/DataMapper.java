@@ -29,7 +29,8 @@ public class DataMapper {
                 int count = rs.getInt("count");
                 String unit = rs.getString("unit");
                 String description = rs.getString("description");
-                Materials material = new Materials(materialId, name, length, count, unit, description);
+                int price = rs.getInt("price");
+                Materials material = new Materials(materialId, name, length, count, unit, description, price);
                 materials.put(materialId,material);
             }
         } catch (ClassNotFoundException | SQLException ex) {

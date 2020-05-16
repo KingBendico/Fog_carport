@@ -1,7 +1,7 @@
 -- noinspection SqlDialectInspectionForFile
 
 -- noinspection SqlNoDataSourceInspectionForFile
-
+/*
 CREATE DATABASE  IF NOT EXISTS `useradmin`;
 
 
@@ -24,3 +24,4 @@ INSERT INTO `users` VALUES
 (3,'robin@somewhere.com','batman','employee');
 UNLOCK TABLES;
 
+*/

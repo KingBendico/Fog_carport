@@ -1,9 +1,11 @@
 package FunctionLayer;
 
 import DBAccess.DataMapper;
+import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -23,6 +25,15 @@ public class LogicFacade {
     }
     public static HashMap<Integer,Materials> getMaterials() throws LoginSampleException {
         return DataMapper.getMaterials();
+    }
+    public static int createOrder(int userId) throws LoginSampleException{
+        return OrderMapper.createOrder(userId);
+    }
+    public static void createCarport(Carport carport) throws LoginSampleException{
+        OrderMapper.createCarport(carport);
+    }
+    public static ArrayList<Order> getPreviousOrders(int userId) throws SQLException{
+        return OrderMapper.getPreviousOrder(userId);
     }
 
 }

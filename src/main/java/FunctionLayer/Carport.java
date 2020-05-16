@@ -4,19 +4,30 @@ import java.util.HashMap;
 
 public abstract class Carport {
 
+    private int id;
+    private int orderId;
     private int length;
     private int width;
     private int shed_length;
     private int shed_width;
     private HashMap<Integer, Materials> materialList;
 
-    public Carport(int length, int width, int shed_length, int shed_width, HashMap<Integer, Materials> materialList) {
+    public Carport(int id, int orderId, int length, int width, int shed_length, int shed_width, HashMap<Integer, Materials> materialList) {
+        this.id = id;
+        this.orderId = orderId;
         this.length = length;
         this.width = width;
         this.shed_length = shed_length;
         this.shed_width = shed_width;
         this.materialList = materialList;
     }
+    public int getId(){return id; }
+
+    public void setId(int id){this.id = id;}
+
+    public int getOrderId(){return orderId; }
+
+    public void setOrderId(int orderId){this.orderId = orderId;}
 
     public int getLength() {
         return length;
