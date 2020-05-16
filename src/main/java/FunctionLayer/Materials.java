@@ -7,14 +7,16 @@ public class Materials {
     private int count;
     private String unit;
     private String description;
+    private int price;
 
-    public Materials(int materialId, String name, int length, int count, String unit, String description) {
+    public Materials(int materialId, String name, int length, int count, String unit, String description, int price) {
         this.materialId = materialId;
         this.name = name;
         this.length = length;
         this.count = count;
         this.unit = unit;
         this.description = description;
+        this.price = price;
     }
 
     public int getMaterialId(){
@@ -64,6 +66,11 @@ public class Materials {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public int getPrice(){return price;}
+
+    public void setPrice(int price){this.price = price;}
+
 
     @Override
     public String toString() {

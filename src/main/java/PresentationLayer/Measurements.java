@@ -19,6 +19,8 @@ public class Measurements extends Command {
         String flatMeasurements = request.getParameter("flatMeasurements");
         String raisedMeasurements = request.getParameter("raisedMeasurements");
 
+        int id = 0;
+        int orderId = 0;
         int carportWidth = 0;
         int carportLength = 0;
         int roof = 0;
@@ -42,18 +44,18 @@ public class Measurements extends Command {
             Carport carport;
             if(roofPitch==0) {
                 if (shedLength == 0) {
-                    carport = new CarportFlatRoof(carportLength, carportWidth, 0, 0, new HashMap<>());
+                    carport = new CarportFlatRoof(id, orderId, carportLength, carportWidth, 0, 0, new HashMap<>());
                     carport.setMaterialList(MaterialCalculator.MaterialList(carport));
                 } else{
-                    carport = new CarportFlatRoof(carportLength, carportWidth, shedLength, shedWidth, new HashMap<>());
+                    carport = new CarportFlatRoof(id, orderId, carportLength, carportWidth, shedLength, shedWidth, new HashMap<>());
                     carport.setMaterialList(MaterialCalculator.MaterialList(carport));
                 }
             }else{
                 if(shedLength == 0){
-                    carport = new CarportRaisedRoof(carportLength, carportWidth, 0, 0, new HashMap<>(), roofPitch);
+                    carport = new CarportRaisedRoof(id, orderId, carportLength, carportWidth, 0, 0, new HashMap<>(), roofPitch);
                     carport.setMaterialList(MaterialCalculator.MaterialList(carport));
                 }else {
-                    carport = new CarportRaisedRoof(carportLength, carportWidth, shedLength, shedWidth, new HashMap<>(), roofPitch);
+                    carport = new CarportRaisedRoof(id, orderId, carportLength, carportWidth, shedLength, shedWidth, new HashMap<>(), roofPitch);
                     carport.setMaterialList(MaterialCalculator.MaterialList(carport));
                 }
             }
