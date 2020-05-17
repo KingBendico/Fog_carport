@@ -14,6 +14,19 @@ public class User {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.address = address;
+        this.phone = phone;
+        this.fullName = fullName;
+    }
+
+    // User creation constructor
+    public User(String email, String password, String role,String fullName, String phone, String address) {
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.address = address;
+        this.phone = phone;
+        this.fullName = fullName;
     }
 
     private static List<User> users;

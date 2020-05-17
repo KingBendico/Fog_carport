@@ -37,7 +37,7 @@ public class UserMapper {
         try {
 
             Connection con = Connector.connection();
-            String SQL = "SELECT UserId, RoleId FROM Users "
+            String SQL = "SELECT UserId, RoleId, FullName, Phone, Address FROM Users "
                     + "WHERE Email=? AND UserPassword=?";
 
             PreparedStatement ps = con.prepareStatement( SQL );
@@ -47,10 +47,16 @@ public class UserMapper {
             ps.setString( 2, password );
              ResultSet rs = ps.executeQuery();
             if ( rs.next() ) {
-                String role = rs.getString( "RoleId" );
-                int id = rs.getInt( "UserId" );
-                User user = new User( email, password, role );
-                user.setId( id );
+                String role = rs.getString("RoleId");
+                int userId = rs.getInt("UserId");
+                String fullName = rs.getString("Fullname");
+                String phone = rs.getString("Phone");
+                String address = rs.getString("Address");
+                User user = new User(email, password, role);
+                user.setUserId(userId);
+                user.setPhone(phone);
+                user.setAddress(address);
+                user.setFullName(fullName);
                 return user;
             } else {
                 throw new LoginSampleException( "Could not validate user" );

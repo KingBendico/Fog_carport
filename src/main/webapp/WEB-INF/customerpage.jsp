@@ -11,13 +11,13 @@
     <body>
 
 
-        <h1>Hello ${sessionScope.email} </h1>
+        <h1>Hej ${sessionScope.name} </h1>
 
 
 
 
 
-        You are now logged in as a customer of our wonderful site.
+        Du er nu logget ind som kunde hos Fog.
     </body>
 </html>
 
