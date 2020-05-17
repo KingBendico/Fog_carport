@@ -39,14 +39,58 @@
                         </div>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="FrontController?target=loginpage">
-                        <div class="nav-text">
-                            Login
-                        </div>
-                    </a>
 
-                </li>
+
+                <!-- Dropdown Menu, Login -->
+                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                    <li class="dropdown order-1" style="margin-right:10px">
+                        <button type="button" id="dropdownMenu1" data-toggle="dropdown"
+                                class="btn btn-outline-primary dropdown-toggle">Login <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right mt-2">
+                            <li class="px-3 py-2">
+                                <form class="form" role="form" name="login" action="FrontController" method="POST">
+                                    <input type="hidden" name="target" value="login">
+                                    <div class="form-group text-center">
+                                        <p>Login</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="email" id="emailInput" placeholder="Email"
+                                               class="form-control form-control-sm"
+                                               type="text" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="password" id="passwordInput" placeholder="Kodeord"
+                                               class="form-control form-control-sm" type="password" required="">
+                                        <small><a href="#" data-toggle="modal" data-target="#modalPassword">Glemt
+                                            Kodeord?</a></small>
+
+                                        <small><a href="FrontController?target=redirect&page=newUser"
+                                                  style="float: right;">Opret ny bruger?</a></small>
+                                    </div>
+
+                                    <!--<div class="form-group check-box">
+                                        <label>
+                                            <input type="checkbox"> Jeg ønsker at forblive logget ind
+                                        </label>
+                                    </div>-->
+                                    <button type="submit" class="btn btn-primary btn-block" value="submit">Login</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link" href="FrontController?target=loginpage">--%>
+<%--                        <div class="nav-text">--%>
+<%--                            Login--%>
+<%--                        </div>--%>
+<%--                    </a>--%>
+
+<%--                </li>--%>
                 <li class="nav-item">
                     <a class="nav-link" href="FrontController?target=contact">
                         <div class="nav-text">
