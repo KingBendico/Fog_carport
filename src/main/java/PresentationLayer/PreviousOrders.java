@@ -7,6 +7,7 @@ import FunctionLayer.Order;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +18,8 @@ public class PreviousOrders extends Command {
 
         int userId = (int) session.getAttribute("userId");
 
-        ArrayList<Order> orders = LogicFacade.getPreviousOrders(userId);
-        request.setAttribute("orders",orders);
+        //ArrayList<Order> orders = LogicFacade.getPreviousOrders(userId);
+        //request.setAttribute("orders",orders);
 
 
         return "";

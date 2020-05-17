@@ -74,6 +74,6 @@ public class Materials {
 
     @Override
     public String toString() {
-        return name + count;
+        return materialId + " " + name + " "+ count + " " + unit;
     }
 }

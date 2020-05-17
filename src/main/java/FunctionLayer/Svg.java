@@ -9,7 +9,7 @@ public class Svg {
     private StringBuilder svg = new StringBuilder();
 
     private final String headerTemplate = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" height=\"%s\" width=\"%s\" viewBox=\"%s\" preserveAspectRatio=\"xMinYMin\">";
-    private final String frameTemplate = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"1000\" height=\"1000\" viewBox=\"%s\" preserveAspectRatio=\"xMinYMin meet\">";
+    private final String frameTemplate = "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"900\" height=\"800\" viewBox=\"%s\" preserveAspectRatio=\"xMinYMin meet\">";
     private final String rectTemplate = "<rect x=\"%d\" y=\"%d\" height=\"%d\" width=\"%d\" style=\"stroke:#000000; fill: #ffffff\" />";
 
     public Svg(int x, int y, int length, int height, String viewBox) {
@@ -19,9 +19,6 @@ public class Svg {
         this.height = height;
         this.viewBox = viewBox;
         svg.append(String.format(headerTemplate, length, height, viewBox));
-    }
-
-    public Svg() {
     }
 
     public void addRect(int x, int y, int length, int height){

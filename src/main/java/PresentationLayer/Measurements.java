@@ -18,7 +18,15 @@ public class Measurements extends Command {
         HttpSession session = request.getSession();
         String flatMeasurements = request.getParameter("flatMeasurements");
         String raisedMeasurements = request.getParameter("raisedMeasurements");
+        session.setAttribute("carportWidth", request.getParameter("Carport_bredde"));
+        session.setAttribute("carportLength", request.getParameter("Carport_laengde"));
+        session.setAttribute("roof", request.getParameter("Tag"));
 
+        // only for carportFlat
+        session.setAttribute("roofPitch", request.getParameter("Taghaeldning"));
+
+        session.setAttribute("shedWidth", request.getParameter("Redskabsrum_bredde"));
+        session.setAttribute("shedLength", request.getParameter("Redskabsrum_laengde"));
         int id = 0;
         int orderId = 0;
         int carportWidth = 0;
@@ -31,14 +39,11 @@ public class Measurements extends Command {
             carportWidth = Integer.parseInt(request.getParameter("Carport_bredde"));
             carportLength = Integer.parseInt(request.getParameter("Carport_laengde"));
             roof = Integer.parseInt(request.getParameter("Tag"));
-
             // only for carportFlat
             roofPitch = Integer.parseInt(request.getParameter("Taghaeldning"));
-
             shedWidth = Integer.parseInt(request.getParameter("Redskabsrum_bredde"));
             shedLength = Integer.parseInt(request.getParameter("Redskabsrum_laengde"));
         }catch (NumberFormatException ex) {}
-
 
             //Konstruerer Carport objekter af den pågældende type
             Carport carport;
@@ -60,16 +65,8 @@ public class Measurements extends Command {
                 }
             }
             session.setAttribute("carport",carport);
-
-            session.setAttribute("carportWidth", request.getParameter("Carport_bredde"));
-            session.setAttribute("carportLength", request.getParameter("Carport_laengde"));
-            session.setAttribute("roof", request.getParameter("Tag"));
-
-            // only for carportFlat
-            session.setAttribute("roofPitch", request.getParameter("Taghaeldning"));
-
-            session.setAttribute("shedWidth", request.getParameter("Redskabsrum_bredde"));
-            session.setAttribute("shedLength", request.getParameter("Redskabsrum_laengde"));
+            Svg svg = SvgDrawing.drawMyCarport(carport);
+            session.setAttribute("svgdrawing", svg.toString());
 
 
 

@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class MaterialCalculator{
 
 
-    public static HashMap MaterialList(Carport carport) throws LoginSampleException { //SKAL TAGE ET ORDRE OBJEKT SOM PARAMETRE?
+    public static HashMap MaterialList(Carport carport) throws LoginSampleException {
         double length = carport.getLength();
         int width = carport.getWidth();
         double area = length * width;

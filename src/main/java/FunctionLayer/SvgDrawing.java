@@ -1,28 +1,12 @@
-/*package PresentationLayer;
+package FunctionLayer;
 
-import FunctionLayer.Carport;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.Svg;
+public class SvgDrawing {
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+    public static Svg drawMyCarport(Carport carport){
+        Svg svgFrame = new Svg(0,0,carport.getLength(),carport.getWidth(),"0,0,800,600");
+        //svgFrame.addFrame(); //1000 x 1000
 
-public class Drawing extends Command {
-    @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
-//        Svg svg = new Svg(800, 600, "0,0,800,600",0,0);
-//        Svg svgInnerDrawing = new Svg(900,800,"0,0,900,800",0,0);
-//        request.setAttribute("svgdrawing", svg.toString());
-
-        HttpSession session = request.getSession();
-        Carport carport = (Carport) session.getAttribute("carport");
-
-
-        Svg svgFrame = new Svg();
-        svgFrame.addFrame(); //1000 x 1000
-
-        Svg svg = new Svg();
+        Svg svg = new Svg(0,0,carport.getLength(),carport.getWidth(),"0,0,900,800");
 
         // Diverse variabler
         int strapThickness = 4;     //4.5 som double ?
@@ -50,11 +34,8 @@ public class Drawing extends Command {
 
         // Viewbox længde + 200, bredde + 200...
 
-        request.setAttribute("svgdrawing", svg.toString());
+        //request.setAttribute("svgdrawing", svg.toString());
 
-        return "drawing";
+        return svg;
     }
 }
-
-
- */

@@ -36,8 +36,11 @@
             Redskabsrum længde: ${sessionScope.shedLength}
         </h5>
     </div>
-</section>
 
+</section>
+<div>
+    ${sessionScope.svgdrawing}
+</div>
 
 <br>
 
