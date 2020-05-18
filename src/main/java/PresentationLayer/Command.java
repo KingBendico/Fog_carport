@@ -25,7 +25,7 @@ abstract class Command {
         commands.put("previousOrders", new PreviousOrders());
         commands.put("logout", new Logout());
         commands.put("index", new Index());
-        commands.put("customerpage", new Customerpage());
+        commands.put("customerpagefa", new Customerpage());
 
 
     }
