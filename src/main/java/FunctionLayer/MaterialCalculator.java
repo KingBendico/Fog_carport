@@ -25,6 +25,7 @@ public class MaterialCalculator{
 
         //Understernbrædder for og bag
         materials.get(1).setCount((int)Math.ceil((width/360.0)*2.0));
+      //  materials.get(1).setCount((int)Math.ceil((width/360.0)*2.0));
 
         //Understernbrædder til sider
         materials.get(2).setCount((int)Math.ceil((length/540.0)*2.0));
@@ -38,8 +39,12 @@ public class MaterialCalculator{
         //Remme i sider
         materials.get(8).setCount((int)Math.ceil((length/600.0)*2.0));
 
-        //Stolper (Der skal være 310cm imellem hver stolpe)
-        materials.get(11).setCount((int)Math.ceil((length/310.0)*2.0));
+        //Stolper (Der skal være 310cm imellem hver stolpe
+        if((int)Math.ceil((length/310)*2.0)==2){
+            materials.get(11).setCount((int)Math.ceil((length/310.0)*2.0)+2);
+        }else{
+            materials.get(11).setCount((int)Math.ceil((length/310.0)*2.0));
+        }
 
         //Vandbrædt på sider????
 
