@@ -7,7 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="../includes/header.jsp" %>
+<%--<%@include file="includes/header.jsp" %>--%>
+<%@include file="../includes/header2.jsp" %>
 <html>
 <head>
     <title>Dine mål</title>
@@ -17,19 +18,19 @@
 <section>
     <div align="center">
         <h5>
-            Carport bredde: ${sessionScope.carportWidth}
+            Carport bredde: ${sessionScope.carportWidth} cm
             <br>
-            Carport længde: ${sessionScope.carportLength}
+            Carport længde: ${sessionScope.carportLength} cm
             <br>
             Tag: ${sessionScope.roof}
             <% if (request.getParameter("Taghaeldning") != null) { %>
             <br>
-            Taghældning: ${sessionScope.roofPitch}
+            Taghældning: ${sessionScope.roofPitch} grader
             <% } %>
             <br>
-            Redskabsrum bredde: ${sessionScope.shedWidth}
+            Redskabsrum bredde: ${sessionScope.shedWidth} cm
             <br>
-            Redskabsrum længde: ${sessionScope.shedLength}
+            Redskabsrum længde: ${sessionScope.shedLength} cm
         </h5>
     </div>
 </section>

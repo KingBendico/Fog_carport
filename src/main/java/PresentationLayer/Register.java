@@ -24,6 +24,11 @@ public class Register extends Command {
             session.setAttribute("email",email);
             session.setAttribute( "user", user );
             session.setAttribute( "role", user.getRole() );
+           session.setAttribute("name", user.getFullName());
+           session.setAttribute("phone", user.getPhone());
+           session.setAttribute("address", user.getAddress());
+           session.setAttribute("userId", user.getUserId());
+
       //      return user.getRole() + "page";
 
            switch (user.getRole()) {

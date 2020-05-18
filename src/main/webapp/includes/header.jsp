@@ -32,6 +32,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -52,7 +53,7 @@
 
                 </li>
 
-                <!-- Dropdown Menu, Login -->
+                <!-- Dropdown-Menu, Login -->
                 <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                     <li class="dropdown order-1" style="margin-right:10px">
                         <button type="button" id="dropdownMenu1" data-toggle="dropdown"
@@ -79,11 +80,6 @@
                                                   style="float: right;">Opret ny bruger?</a></small>
                                     </div>
 
-                                    <!--<div class="form-group check-box">
-                                        <label>
-                                            <input type="checkbox"> Jeg ønsker at forblive logget ind
-                                        </label>
-                                    </div>-->
                                     <button type="submit" class="btn btn-primary btn-block" value="submit">Login</button>
                                 </form>
                             </li>
