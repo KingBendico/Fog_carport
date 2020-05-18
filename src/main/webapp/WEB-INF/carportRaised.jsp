@@ -115,9 +115,9 @@
                                     <option value="630">630 cm</option>
                                     <option value="660">660 cm</option>
                                     <option value="690">690 cm</option>
-                                    <option val>720 cm</option>
-                                    <option val>750 cm</option>
-                                    <option val>780 cm</option>
+                                    <option value="720">720 cm</option>
+                                    <option value="750">750 cm</option>
+                                    <option value="780">780 cm</option>
                                 </select>
                                 <span class="field-validation-valid"
                                       data-valmsg-for="Carport_laengde_d3cfc86491a24ab4af819cf6e6a0164a"
@@ -229,25 +229,25 @@
                                     <option selected="selected" value="Ønsker ikke redskabsrum">Ønsker ikke
                                         redskabsrum
                                     </option>
-                                    <option value="">150 cm</option>
-                                    <option value="">180 cm</option>
-                                    <option value="">210 cm</option>
-                                    <option value="">240 cm</option>
-                                    <option value="">270 cm</option>
-                                    <option value="">300 cm</option>
-                                    <option value="">330 cm</option>
-                                    <option value="">360 cm</option>
-                                    <option value=" cm</option>
-                                    <option value="">420 cm</option>
-                                    <option value="">450 cm</option>
-                                    <option value="">480 cm</option>
-                                    <option value="">510 cm</option>
-                                    <option value="">540 cm</option>
-                                    <option value="">570 cm</option>
-                                    <option value="">600 cm</option>
-                                    <option value="">630 cm</option>
-                                    <option value="">660 cm</option>
-                                    <option value="">690 cm</option>
+                                    <option value="150">150 cm</option>
+                                    <option value="180">180 cm</option>
+                                    <option value="210">210 cm</option>
+                                    <option value="240">240 cm</option>
+                                    <option value="270">270 cm</option>
+                                    <option value="300">300 cm</option>
+                                    <option value="330">330 cm</option>
+                                    <option value="360">360 cm</option>
+                                    <option value="390">390 cm</option>
+                                    <option value="420">420 cm</option>
+                                    <option value="450">450 cm</option>
+                                    <option value="480">480 cm</option>
+                                    <option value="510">510 cm</option>
+                                    <option value="540">540 cm</option>
+                                    <option value="570">570 cm</option>
+                                    <option value="600">600 cm</option>
+                                    <option value="630">630 cm</option>
+                                    <option value="660">660 cm</option>
+                                    <option value="690">690 cm</option>
                                 </select>
                                 <span class="field-validation-valid"
                                       data-valmsg-for="Redskabsrum_laengde_f1cea9650faa485ca81742dcbc98b93c"
