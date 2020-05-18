@@ -40,10 +40,11 @@ public class MaterialCalculator{
         materials.get(8).setCount((int)Math.ceil((length/600.0)*2.0));
 
         //Stolper (Der skal være 310cm imellem hver stolpe
-        if((int)Math.ceil((length/310)*2.0)==2){
-            materials.get(11).setCount((int)Math.ceil((length/310.0)*2.0)+2);
-        }else{
-            materials.get(11).setCount((int)Math.ceil((length/310.0)*2.0));
+        materials.get(11).setCount(4);
+        int distFromEnd = carport.getLength()/10;
+        int spaceBetween = (carport.getLength()-(distFromEnd*2));
+        for(int i =310; i<(spaceBetween/2); i = i+310){
+            materials.get(11).setCount(materials.get(11).getCount()+2);
         }
 
         //Vandbrædt på sider????
