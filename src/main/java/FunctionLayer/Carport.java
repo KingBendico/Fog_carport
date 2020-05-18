@@ -21,6 +21,27 @@ public abstract class Carport {
         this.shed_width = shed_width;
         this.materialList = materialList;
     }
+    public static Carport createCarport(int id, int orderId, int carportLength, int carportWidth, int shedLength, int shedWidth, int roofPitch) throws LoginSampleException{
+        Carport carport;
+        if(roofPitch==0) {
+            if (shedLength == 0) {
+                carport = new CarportFlatRoof(id, orderId, carportLength, carportWidth, 0, 0, new HashMap<>());
+                carport.setMaterialList(MaterialCalculator.MaterialList(carport));
+            } else{
+                carport = new CarportFlatRoof(id, orderId, carportLength, carportWidth, shedLength, shedWidth, new HashMap<>());
+                carport.setMaterialList(MaterialCalculator.MaterialList(carport));
+            }
+        }else{
+            if(shedLength == 0){
+                carport = new CarportRaisedRoof(id, orderId, carportLength, carportWidth, 0, 0, new HashMap<>(), roofPitch);
+                carport.setMaterialList(MaterialCalculator.MaterialList(carport));
+            }else {
+                carport = new CarportRaisedRoof(id, orderId, carportLength, carportWidth, shedLength, shedWidth, new HashMap<>(), roofPitch);
+                carport.setMaterialList(MaterialCalculator.MaterialList(carport));
+            }
+        }
+        return carport;
+    }
     public int getId(){return id; }
 
     public void setId(int id){this.id = id;}

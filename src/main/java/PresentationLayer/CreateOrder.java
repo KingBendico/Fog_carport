@@ -19,11 +19,12 @@ public class CreateOrder extends Command {
 
         //create order from userId and fetch orderId
         int orderId = LogicFacade.createOrder(userId);
+
         //cast carport object with session attribute and createcarport with new orderId
         Carport carport = (Carport) session.getAttribute("carport");
         carport.setOrderId(orderId);
-        LogicFacade.createCarport(carport);
+        LogicFacade.saveCarport(carport);
 
-        return "";
+        return "customerpage";
     }
 }

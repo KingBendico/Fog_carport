@@ -2,10 +2,13 @@ package PresentationLayer;
 
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Order;
 import FunctionLayer.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class Login extends Command {
@@ -31,6 +34,13 @@ public class Login extends Command {
         session.setAttribute("address", user.getAddress());
         session.setAttribute("userId", user.getUserId());
 
+        //Array til alle ordre denne kunde har
+        ArrayList<Order> Orders = new ArrayList<>();
+        try {
+            Orders = LogicFacade.getPreviousOrders(user.getUserId());
+        } catch (SQLException ex){}
+
+        session.setAttribute("Orders",Orders);
 
 
     //    return user.getRole() + "page";

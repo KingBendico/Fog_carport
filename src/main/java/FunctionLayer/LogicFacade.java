@@ -29,11 +29,14 @@ public class LogicFacade {
     public static int createOrder(int userId) throws LoginSampleException{
         return OrderMapper.createOrder(userId);
     }
-    public static void createCarport(Carport carport) throws LoginSampleException{
-        OrderMapper.createCarport(carport);
+    public static void saveCarport(Carport carport) throws LoginSampleException{
+        OrderMapper.saveCarport(carport);
     }
     public static ArrayList<Order> getPreviousOrders(int userId) throws SQLException{
         return OrderMapper.getPreviousOrder(userId);
+    }
+    public static Carport getCarport(int orderId) throws SQLException{
+        return OrderMapper.getCarport(orderId);
     }
 
 }

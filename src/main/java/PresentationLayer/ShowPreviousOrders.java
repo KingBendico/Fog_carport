@@ -11,15 +11,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PreviousOrders extends Command {
+public class ShowPreviousOrders extends Command {
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException{
         HttpSession session = request.getSession();
 
-        int userId = (int) session.getAttribute("userId");
-
-        //ArrayList<Order> orders = LogicFacade.getPreviousOrders(userId);
-        //request.setAttribute("orders",orders);
 
 
         return "";
