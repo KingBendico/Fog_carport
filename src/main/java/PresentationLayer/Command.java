@@ -23,6 +23,9 @@ abstract class Command {
         //commands.put("drawing", new Drawing());
         commands.put("createOrder", new CreateOrder());
         commands.put("previousOrders", new PreviousOrders());
+        commands.put("logout", new Logout());
+        commands.put("index", new Index());
+        commands.put("customerpage", new Customerpage());
 
 
     }

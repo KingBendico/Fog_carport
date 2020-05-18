@@ -1,6 +1,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@include file="includes/header.jsp" %>
+<%--<%@include file="includes/header.jsp" %>--%>
+<%@include file="includes/header2.jsp" %>
+
+
+
+
 <div class="jumbotron text-center" style="padding: 2px!important;">
     <br>
     <h1>Velkommen til Fog Carporte!</h1>
@@ -11,7 +16,7 @@
 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
     <button type="button" class="btn btn-secondary"  onclick="window.location='FrontController?target=carportFlat';">Carport med fladt tag</button>
     <button type="button" class="btn btn-secondary" onclick="window.location='FrontController?target=carportRaised';">Carport med rejsning </button>
-    <button type="button" class="btn btn-secondary" onclick="window.location='FrontController?target=carportStandard';">Standard carporte</button>
+
 
 </div>
 </div>

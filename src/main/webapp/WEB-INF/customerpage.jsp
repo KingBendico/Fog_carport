@@ -1,29 +1,94 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@include file="../includes/header.jsp" %>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer home page</title>
-    </head>
-    <body>
+<c:choose>
+    <c:when test="${sessionScope.role != '30'}">
+        <c:redirect url="FrontController?target=index"/>
+    </c:when>
+</c:choose>
+
+<c:choose>
+    <c:when test="${sessionScope.email != null}">
+        <c:choose>
+            <c:when test="${sessionScope.role == 30}">
+                <%@include file="../includes/headerLogout.jsp" %>
+            </c:when>
+            <c:otherwise>
+                <%@include file="../includes/headerLogout.jsp" %>
+            </c:otherwise>
+        </c:choose>
+    </c:when>
+    <c:otherwise>
+        <%@include file="../includes/header.jsp" %>
+    </c:otherwise>
+</c:choose>
 
 
-        <h1>Hej ${sessionScope.name} </h1>
+
+<!-- INDHOLDS DIV -->
+<div class="jumbotron text-center" style="padding: 2px!important;">
+    <br>
+    <h1>${sessionScope.name}</h1>
+    <br>
+    <div class="context">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3>Mine ordrer</h3>
+                    <p>
+                        <button type="button" class="btn btn-primary btn-block" value="Button">Se aktive ordrer</button>
+                        <br>
+                        <button type="button" class="btn btn-primary btn-block" value="Button">Se udførte ordrer
+                        </button>
+                        <br>
+                    </p>
 
 
+                </div>
+                <div class="col">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Mine data</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-
-
-        Du er nu logget ind som kunde hos Fog.
-    </body>
-</html>
-
-<c:if test="${requestScope.error!= null}">
-    <h2>Error ! </h2>
-    ${requestScope.error}
-</c:if>
+                        <tr>
+                            <td>Navn</td>
+                            <td>${sessionScope.name}</td>
+                        </tr>
+                        <tr>
+                            <td>Kundenummer.</td>
+                            <td>${sessionScope.userId}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>${sessionScope.email}</td>
+                        </tr>
+                        <tr>
+                            <td>Adgangskode</td>
+                            <td>********</td>
+                        </tr>
+                        <tr>
+                            <td>Telefon</td>
+                            <td>${sessionScope.phone}</td>
+                        </tr>
+                        <tr>
+                            <td>Adresse</td>
+                            <td>${sessionScope.address}</td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-primary btn-block" value="Button">Skift adgangskode</button>
+                </div>
+            </div>
+            <c:if test="${requestScope.error!= null}">
+                <h2>Error ! </h2>
+                ${requestScope.error}
+            </c:if>
+        </div>
+    </div>
+</div>
 
 <%@include file="../includes/footer.jsp" %>
