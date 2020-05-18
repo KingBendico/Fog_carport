@@ -3,10 +3,11 @@ package FunctionLayer;
 public class SvgDrawing {
 
     public static Svg drawMyCarport(Carport carport){
-        Svg svgFrame = new Svg(0,0,carport.getLength(),carport.getWidth(),"0,0,800,600");
-        //svgFrame.addFrame(); //1000 x 1000
+    //    Svg svgFrame = new Svg(0,0,1000,1000,"0,0,1000,1000");
+    //    svgFrame.addFrame(); //1000 x 1000
 
-        Svg svg = new Svg(0,0,carport.getLength(),carport.getWidth(),"0,0,900,800");
+        Svg svg = new Svg(0,0,carport.getWidth(),carport.getLength(),"0,0,800,800"); // Hvis viewbox < str på carport bliver den beskåret.
+        // Jo større carport der vælges, des større bliver hele viewboxen. Jo mindre, desto mindre bliver viewboxen.
 
         // Diverse variabler
         int strapThickness = 4;     //4.5 som double ?
@@ -15,13 +16,18 @@ public class SvgDrawing {
         int rafterDistance = 55;
 
         // Remme / Strap
-        svg.addStrap(0,100, carport.getLength(), strapThickness);
-        svg.addStrap(0,carport.getWidth()-200, carport.getLength(), strapThickness);
+        svg.addStrap(0,0, strapThickness, carport.getLength());                     // x 0
+        svg.addStrap(0,carport.getWidth(), strapThickness, carport.getLength());       // x carport.length
 
         // Spær / Rafter
-        svg.addRafter(0,0,rafterThickness,carport.getWidth());
         for(int i = 0; i < carport.getLength(); i = i + rafterDistance){
-            svg.addRafter(0,0,rafterThickness,carport.getWidth()); // X SKAL ÆNDRES !!!!!!!!!!!!!!!
+            svg.addRafter(i,0,carport.getWidth(), rafterThickness); // X SKAL ÆNDRES !!!!!!!!!!!!!!!
+        }
+        if(carport.getLength() != 330){
+            svg.addRafter(carport.getLength(),0,carport.getWidth(), rafterThickness);
+        }
+        else if(carport.getLength() != 660){
+            svg.addRafter(carport.getLength(),0,carport.getWidth(), rafterThickness);
         }
 
         // Stolper / Pole                   // bredde 240-750   // længde 240-780

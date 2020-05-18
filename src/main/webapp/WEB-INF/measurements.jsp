@@ -13,12 +13,7 @@
     <title>Dine mål</title>
 </head>
 <body>
-
-
 <h1 align="center">Dine valg:</h1>
-
-
-<br>
 <section>
     <div align="center">
         <h5>
@@ -37,14 +32,12 @@
             Redskabsrum længde: ${sessionScope.shedLength}
         </h5>
     </div>
-
 </section>
-<div>
+<br>
+<div align="center">
     ${sessionScope.svgdrawing}
 </div>
-
 <br>
-
 <c:if test="${requestScope.error!= null}">
     <h2>Error ! </h2>
     ${requestScope.error}
