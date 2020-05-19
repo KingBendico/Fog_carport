@@ -93,8 +93,10 @@ public abstract class Carport {
     @Override
     public String toString() {
         String constring ="";
-        for (int i = 0; i < materialList.size(); i++){
-            constring += materialList.get(i).getName() + " " + materialList.get(i).getName() + "/n";
+        for (int i = 0; i < materialList.size(); i++) {
+            if (materialList.get(i).getCount() > 0) {
+                constring += materialList.get(i).getMaterialId() + ", " + materialList.get(i).getName() + ", " + materialList.get(i).getCount() + ",/n";
+            }
         }
         return constring;
     }

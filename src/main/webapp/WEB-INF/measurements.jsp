@@ -39,6 +39,14 @@
     ${sessionScope.svgdrawing}
 </div>
 <br>
+<div align="center">
+        <div class="container">
+            <form action="FrontController" method="POST">
+                <input type="hidden" name="target" value="isLoggedOn">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Bestil Carport</button>
+            </form>
+        </div>
+</div>
 <c:if test="${requestScope.error!= null}">
     <h2>Error ! </h2>
     ${requestScope.error}

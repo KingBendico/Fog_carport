@@ -23,10 +23,11 @@ public class ShowCurrentOrder extends Command{
                 orderId = o.getOrderId();
             }
         }
+
         try {
             session.setAttribute("carport", LogicFacade.getCarport(orderId));
         } catch (SQLException ex){}
 
-        return "";
+        return "showOrder";
     }
 }

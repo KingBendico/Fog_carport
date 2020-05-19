@@ -21,10 +21,12 @@ abstract class Command {
         commands.put("loginpage", new LoginPage());
         commands.put("newUser", new NewUser());
         commands.put("createOrder", new CreateOrder());
+        commands.put("currentOrder", new ShowCurrentOrder());
         commands.put("previousOrders", new ShowPreviousOrders());
         commands.put("logout", new Logout());
         commands.put("index", new Index());
         commands.put("customerpage", new Customerpage());
+        commands.put("isLoggedOn", new isLoggedOn());
 
 
     }

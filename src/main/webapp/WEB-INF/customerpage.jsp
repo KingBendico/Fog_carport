@@ -36,10 +36,15 @@
                 <div class="col">
                     <h3>Mine ordrer</h3>
                     <p>
-                        <button type="button" class="btn btn-primary btn-block" value="Button">Se aktive ordrer</button>
+                    <form action="FrontController" method="POST">
+                        <input type="hidden" name="target" value="currentOrder">
+                        <button class="btn btn-primary btn-block" class="submit">Se aktive ordrer</button>
+                    </form>
                         <br>
-                        <button type="button" class="btn btn-primary btn-block" value="Button">Se udførte ordrer
-                        </button>
+                    <form action="FrontController" method="POST">
+                        <input type="hidden" name="target" value="previousOrders">
+                        <button class="btn btn-primary btn-block" class="submit">Se udførte ordrer</button>
+                    </form>
                         <br>
                     </p>
 
