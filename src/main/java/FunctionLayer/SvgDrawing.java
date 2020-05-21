@@ -3,8 +3,8 @@ package FunctionLayer;
 public class SvgDrawing {
 
     public static Svg drawMyCarport(Carport carport){
-        Svg svgFrame = new Svg(0,0,1000,1000,"0,0,1000,1000");
-        svgFrame.addFrame(); //1000 x 1000
+//        Svg svgFrame = new Svg(0,0,1000,1000,"0,0,1000,1000");
+//        svgFrame.addFrame(); //1000 x 1000
 
         Svg svg = new Svg(0,0,carport.getWidth(),carport.getLength(),"0,0,800,800"); // Hvis viewbox < str på carport bliver den beskåret.
         // Jo større carport der vælges, des større bliver hele viewboxen. Jo mindre, desto mindre bliver viewboxen.
@@ -39,7 +39,7 @@ public class SvgDrawing {
         svg.addStern(0,0, carport.getWidth(), sternThickness);
         svg.addStern(carport.getLength(),0, carport.getWidth(), sternThickness);
 
-        // Stolper / Pole                   // bredde 240-750   // længde 240-780
+        // Stolper / Pole
         int poleX = (int)Math.round(carport.getLength()/10); //variabel
 
         // stolper til venstre
@@ -56,8 +56,8 @@ public class SvgDrawing {
             svg.addPole(carport.getLength()/2,carport.getWidth() - 38,poleThickness,poleThickness);
         }
 
-
-        //request.setAttribute("svgdrawing", svg.toString());
+       // System.out.println(carport.getMaterialList().get(11).getCount());
+       // request.setAttribute("svgdrawing", svg.toString());
 
         return svg;
     }

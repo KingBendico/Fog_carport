@@ -43,7 +43,7 @@ public class MaterialCalculator{
         materials.get(11).setCount(4);
         int distFromEnd = carport.getLength()/10;
         int spaceBetween = (carport.getLength()-(distFromEnd*2));
-        for(int i =310; i<(spaceBetween/2); i = i+310){
+        for(int i = 310; i < spaceBetween; i = i + 310){    // rettet spaceBetween/2 til spaceBetween.
             materials.get(11).setCount(materials.get(11).getCount()+2);
         }
 
