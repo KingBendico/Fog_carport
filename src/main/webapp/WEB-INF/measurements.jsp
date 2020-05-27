@@ -18,9 +18,9 @@
 <section>
     <div align="center">
         <h5>
-            Carport bredde: ${sessionScope.carportWidth} cm
+            Carport bredde: ${sessionScope.carportWidth} <% if (request.getParameter("Carport_bredde") != "") { %> cm <% } %>
             <br>
-            Carport længde: ${sessionScope.carportLength} cm
+            Carport længde: ${sessionScope.carportLength} <% if (request.getParameter("Carport_laengde") != "") { %> cm <% } %>
             <br>
             Tag: ${sessionScope.roof}
             <% if (request.getParameter("Taghaeldning") != null) { %>
@@ -28,25 +28,27 @@
             Taghældning: ${sessionScope.roofPitch} grader
             <% } %>
             <br>
-            Redskabsrum bredde: ${sessionScope.shedWidth} cm
+            <% if (request.getParameter("Redskabsrum_bredde") != "") { %>Redskabsrum bredde: ${sessionScope.shedWidth} cm <% } %>
             <br>
-            Redskabsrum længde: ${sessionScope.shedLength} cm
+            <% if (request.getParameter("Redskabsrum_laengde") != "") { %>Redskabsrum længde: ${sessionScope.shedLength}  cm <% } %>
         </h5>
     </div>
 </section>
 <br>
 <div align="center">
     ${sessionScope.svgdrawing}
+
+            <div class="col-sm-4">
+
+                <form action="FrontController" method="POST">
+                    <input type="hidden" name="target" value="isLoggedOn">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Bestil Carport</button>
+                </form>
+
+            </div>
 </div>
 <br>
-<div align="center">
-        <div class="container">
-            <form action="FrontController" method="POST">
-                <input type="hidden" name="target" value="isLoggedOn">
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Bestil Carport</button>
-            </form>
-        </div>
-</div>
+
 <c:if test="${requestScope.error!= null}">
     <h2>Error ! </h2>
     ${requestScope.error}
