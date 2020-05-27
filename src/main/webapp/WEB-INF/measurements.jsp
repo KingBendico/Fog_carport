@@ -28,12 +28,18 @@
             Taghældning: ${sessionScope.roofPitch} grader
             <% } %>
             <br>
-            Redskabsrum bredde: ${sessionScope.shedWidth} cm
+            Redskabsrum bredde: ${sessionScope.shedWidth}
             <br>
-            Redskabsrum længde: ${sessionScope.shedLength} cm
+            Redskabsrum længde: ${sessionScope.shedLength}
         </h5>
     </div>
 </section>
+<br>
+<div align="center">
+    <h5>
+        Nedenfor ses en vejledende tegning af din valgte carport.
+    </h5>
+</div>
 <br>
 <div align="center">
     ${sessionScope.svgdrawing}

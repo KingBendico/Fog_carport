@@ -18,7 +18,7 @@ public class UserMapper {
     public static void createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO Users (Email, UserPassword, RoleId, FullName, Phone, Address) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO users (email, userPassword, roleId, fullName, phoneNumber, address) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );
@@ -42,8 +42,8 @@ public class UserMapper {
         try {
 
             Connection con = Connector.connection();
-            String SQL = "SELECT UserId, RoleId, FullName, Phone, Address FROM Users "
-                    + "WHERE Email=? AND UserPassword=?";
+            String SQL = "SELECT userId, roleId, fullName, phoneNumber, address FROM users "
+                    + "WHERE email=? AND userPassword=?";
 
             PreparedStatement ps = con.prepareStatement( SQL );
             System.out.println(ps.toString());
@@ -52,11 +52,11 @@ public class UserMapper {
             ps.setString( 2, password );
              ResultSet rs = ps.executeQuery();
             if ( rs.next() ) {
-                String role = rs.getString("RoleId");
-                int userId = rs.getInt("UserId");
-                String fullName = rs.getString("Fullname");
-                String phone = rs.getString("Phone");
-                String address = rs.getString("Address");
+                String role = rs.getString("roleId");
+                int userId = rs.getInt("userId");
+                String fullName = rs.getString("fullname");
+                String phone = rs.getString("phoneNumber");
+                String address = rs.getString("address");
                 User user = new User(email, password, role);
                 user.setUserId(userId);
                 user.setPhone(phone);

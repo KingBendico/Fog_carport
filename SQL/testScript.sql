@@ -1,6 +1,6 @@
-DROP SCHEMA IF EXISTS fogcarport_db;
-CREATE SCHEMA  IF NOT EXISTS fogcarport_db;
-USE fogcarport_db;
+DROP SCHEMA IF EXISTS fogcarport_db_test;
+CREATE SCHEMA  IF NOT EXISTS fogcarport_db_test;
+USE fogcarport_db_test;
 
 CREATE TABLE `materials` (
   `materialId` int NOT NULL AUTO_INCREMENT,
