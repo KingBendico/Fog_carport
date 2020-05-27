@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PreviousOrders extends Command {
+
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException{
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
 
         return "showOrder";

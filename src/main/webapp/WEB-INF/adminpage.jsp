@@ -4,7 +4,7 @@
     Author     : kasper
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +12,7 @@
     <title>Customer home page</title>
 </head>
 <body>
-
-
 <h1>Hello ${sessionScope.email} </h1>
-
-
-
-
-
 You are now logged in as a customer of our wonderful site.
 </body>
 </html>

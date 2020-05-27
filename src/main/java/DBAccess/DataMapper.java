@@ -14,15 +14,15 @@ public class DataMapper {
 
     public static HashMap getMaterials() throws LoginSampleException {
 
-        HashMap<Integer,Materials> materials = new HashMap<>();
+        HashMap<Integer, Materials> materials = new HashMap<>();
 
-        try{
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM materials";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next()){
+            while (rs.next()) {
                 int materialId = rs.getInt("materialId");
                 String name = rs.getString("name");
                 int length = rs.getInt("length");
@@ -31,7 +31,7 @@ public class DataMapper {
                 String description = rs.getString("description");
                 int price = rs.getInt("price");
                 Materials material = new Materials(materialId, name, length, count, unit, description, price);
-                materials.put(materialId,material);
+                materials.put(materialId, material);
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new LoginSampleException(ex.getMessage());

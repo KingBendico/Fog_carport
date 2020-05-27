@@ -8,12 +8,10 @@
     <h1>Opret ny bruger</h1>
     <br>
 </div>
-
 <section>
     <div align="center">
         <div class="col-md-6">
             <div class="container">
-
                 <!-- Login Form -->
                 <form class="form" role="form" name="register" action="FrontController" method="POST">
                     <input type="hidden" name="target" value="register">
@@ -27,12 +25,9 @@
                     <input required type="text" id="address" class="fadeIn third" name="address"
                            placeholder="din adresse">
                     <input required type="text" id="phone" class="fadeIn third" name="phone" placeholder="tlf. nummer">
-
                     <%--   <button type="button" style="float: center;" class="btn btn-primary" value="Button">Opret bruger</button>--%>
-
                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Opret bruger">
                 </form>
-
             </div>
         </div>
     </div>

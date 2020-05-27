@@ -1,7 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fog Carporte</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -19,12 +17,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link href="resources/css/style.css" rel="stylesheet">
-
-
 </head>
 
 <body>
-
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-dark sticky-top">
     <div class="container-fluid">
@@ -48,9 +43,6 @@
                             Kontakt
                         </div>
                     </a>
-
-
-
                 </li>
 
                 <!-- Dropdown-Menu, Login -->
@@ -74,13 +66,12 @@
                                     <div class="form-group">
                                         <input name="password" id="passwordInput" placeholder="Kodeord"
                                                class="form-control form-control-sm" type="password" required="">
-
-
                                         <small><a href="FrontController?target=newUser"
                                                   style="float: right;">Opret ny bruger?</a></small>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary btn-block" value="submit">Login</button>
+                                    <button type="submit" class="btn btn-primary btn-block" value="submit">Login
+                                    </button>
                                 </form>
                             </li>
                         </ul>
@@ -88,26 +79,15 @@
                 </ul>
 
 
-
-<%--                <li class="nav-item">--%>
-<%--                    <a class="nav-link" href="FrontController?target=loginpage">--%>
-<%--                        <div class="nav-text">--%>
-<%--                            Login--%>
-<%--                        </div>--%>
-<%--                    </a>--%>
-
-<%--                </li>--%>
-
+                <%--                <li class="nav-item">--%>
+                <%--                    <a class="nav-link" href="FrontController?target=loginpage">--%>
+                <%--                        <div class="nav-text">--%>
+                <%--                            Login--%>
+                <%--                        </div>--%>
+                <%--                    </a>--%>
+                <%--                </li>--%>
 
             </ul>
-
-
-
-
-
         </div>
-
-
     </div>
-
 </nav>

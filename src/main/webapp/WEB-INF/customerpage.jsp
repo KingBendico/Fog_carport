@@ -3,7 +3,6 @@
 <%--<%@include file="includes/header.jsp" %>--%>
 <%@include file="../includes/header2.jsp" %>
 
-
 <!-- INDHOLDS DIV -->
 <div class="jumbotron text-center" style="padding: 2px!important;">
     <br>
@@ -19,15 +18,13 @@
                         <input type="hidden" name="target" value="CurrentOrder">
                         <button class="btn btn-primary btn-block" class="submit">Se aktive ordrer</button>
                     </form>
-                        <br>
+                    <br>
                     <form action="FrontController" method="POST">
                         <input type="hidden" name="target" value="PreviousOrders">
                         <button class="btn btn-primary btn-block" class="submit">Se udførte ordrer</button>
                     </form>
-                        <br>
+                    <br>
                     </p>
-
-
                 </div>
                 <div class="col">
                     <table id="example" class="table table-striped table-bordered" style="width:100%">

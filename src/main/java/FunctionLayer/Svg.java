@@ -21,27 +21,23 @@ public class Svg {
         svg.append(String.format(headerTemplate, length, height, viewBox));
     }
 
-    public void addRect(int x, int y, int length, int height){
-        svg.append(String.format(rectTemplate, x, y, length, height));
-    }
-
-    public void addFrame(){
+    public void addFrame() {
         svg.append(String.format(frameTemplate, viewBox));
     }
 
-    public void addStrap(int x, int y, int length, int height){
+    public void addStrap(int x, int y, int length, int height) {
         svg.append(String.format(rectTemplate, x, y, length, height));
     }
 
-    public void addRafter(int x, int y, int length, int height){
+    public void addRafter(int x, int y, int length, int height) {
         svg.append(String.format(rectTemplate, x, y, length, height));
     }
 
-    public void addStern(int x, int y, int length, int height){
+    public void addStern(int x, int y, int length, int height) {
         svg.append(String.format(rectTemplate, x, y, length, height));
     }
 
-    public void addPole(int x, int y, int length, int height){
+    public void addPole(int x, int y, int length, int height) {
         svg.append(String.format(rectTemplate, x, y, length, height));
     }
 

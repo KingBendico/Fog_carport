@@ -19,11 +19,11 @@ public class Materials {
         this.price = price;
     }
 
-    public int getMaterialId(){
+    public int getMaterialId() {
         return materialId;
     }
 
-    public void setMaterialId(int materialId){
+    public void setMaterialId(int materialId) {
         this.materialId = materialId;
     }
 
@@ -67,13 +67,16 @@ public class Materials {
         this.description = description;
     }
 
-    public int getPrice(){return price;}
+    public int getPrice() {
+        return price;
+    }
 
-    public void setPrice(int price){this.price = price;}
-
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     @Override
     public String toString() {
-        return materialId + " " + name + " "+ count + " " + unit;
+        return materialId + " " + name + " " + count + " " + unit;
     }
 }

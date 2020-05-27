@@ -12,12 +12,7 @@
         <title>Employee home page</title>
     </head>
     <body>
-        
-
         <h1>Hello ${sessionScope.email} </h1>
-
-
-
         You are now logged in as a EMPLOYEE of our wonderful site.
     </body>
 </html>

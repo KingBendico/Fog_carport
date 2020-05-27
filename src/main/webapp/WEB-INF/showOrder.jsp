@@ -3,9 +3,6 @@
 <%--<%@include file="includes/header.jsp" %>--%>
 <%@include file="../includes/header2.jsp" %>
 
-
-
-
 <div class="card mb-4">
     <div class="card-header">
         Materialeliste
@@ -19,7 +16,6 @@
                     <th scope="col">Beskrivelse</th>
                     <th scope="col">Antal</th>
                     <th scope="col">Dato</th>
-
                 </tr>
                 </thead>
                 <tbody>
@@ -30,26 +26,16 @@
                         <td>${materials.key.description}</td>
                         <td>${materials.key.description}</td>
                         <td>${materials.key.description}</td>
-
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
         </div>
-
-
-</div>
-
-
-
-
+    </div>
 </div>
 <c:if test="${requestScope.error!= null}">
     <h2>Error ! </h2>
     ${requestScope.error}
 </c:if>
-</div>
-</div>
-</div>
 
 <%@include file="../includes/footer.jsp" %>
