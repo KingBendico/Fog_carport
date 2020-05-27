@@ -189,7 +189,7 @@
                                 </label>
                                 <select class="form-control" id="Input_1745136595" name="Redskabsrum_bredde"
                                         title="Redskabsrum bredde">
-                                    <option selected="selected" value="Ønsker ikke redskabsrum">Ønsker ikke
+                                    <option selected="selected" value="">Ønsker ikke
                                         redskabsrum
                                     </option>
                                     <option value="210">210 cm</option>
@@ -226,7 +226,7 @@
                                 </label>
                                 <select class="form-control" id="Input_1745136595" name="Redskabsrum_laengde"
                                         title="Redskabsrum bredde">
-                                    <option selected="selected" value="Ønsker ikke redskabsrum">Ønsker ikke
+                                    <option selected="selected" value="">Ønsker ikke
                                         redskabsrum
                                     </option>
                                     <option value="150">150 cm</option>
