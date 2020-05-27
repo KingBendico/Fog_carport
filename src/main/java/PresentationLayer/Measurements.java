@@ -17,6 +17,8 @@ public class Measurements extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
 
+
+
         session.setAttribute("carportWidth", request.getParameter("Carport_bredde"));
         session.setAttribute("carportLength", request.getParameter("Carport_laengde"));
         session.setAttribute("roof", request.getParameter("Tag"));
