@@ -8,11 +8,8 @@
     <h1>Carport med rejsning</h1>
     <br>
 </div>
-
-
     <div class="col-sm-12" align="center">
         <div class="btn-group btn-group-toggle">
-
             <label class="btn btn-secondary">
                 <input type="radio" name="FlatCarport" id="FlatCarport"
                        onclick="window.location='FrontController?target=carportFlat';"/> Carport med fladt tag
@@ -22,40 +19,27 @@
                        onclick="window.location='FrontController?target=carportRaised';" checked/> Carport med
                 rejsning
             </label>
-
         </div>
     </div>
-
 <br>
-
-
 <section>
-
     <p class="h3 text-center">
         Ønsket carport mål
     </p>
-
     <div class="container">
         <div class="row">
             <div class="pageheadline">
-
             </div>
-
             <div class="col-md-9">
-
                 <div>
                     <div>
-
                         <div class="formbuilder-block">
                             <div class="row">
                                 <div class="col-md-12" data-form-table-to-div="">
-
                                     <form action="FrontController" name="raisedMeasurements" method="POST"
                                           class="ng-pristine ng-valid">
                                         <input type="hidden" name="target" value="measurements">
-
                                         <div id="table" class="form-horizontal col-md-12 col-xs-12">
-
                         <div class="form-group">
                             <div class="col-md-12 col-xs-12">
                                 <label title="Carport bredde" for="Input_974608667">
@@ -86,13 +70,10 @@
                                 <span class="field-validation-valid"
                                       data-valmsg-for="Carport_bredde_4a6968db98be4b4e8b979f1cee472847"
                                       data-valmsg-replace="true"></span>
-
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12 col-xs-12">
-
-
                                 <label title="Carport længde" for="Input_1745136595">
                                     Carport længde
                                 </label>
@@ -122,13 +103,10 @@
                                 <span class="field-validation-valid"
                                       data-valmsg-for="Carport_laengde_d3cfc86491a24ab4af819cf6e6a0164a"
                                       data-valmsg-replace="true"></span>
-
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12 col-xs-12">
-
-
                                 <label title="Tagtype/farve" for="Input_1745136595">
                                     Tag
                                 </label>
@@ -153,13 +131,10 @@
                                 <span class="field-validation-valid"
                                       data-valmsg-for="Tag_833aa65467444a3e87cd89dfbceb10d0"
                                       data-valmsg-replace="true"></span>
-
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12 col-xs-12">
-
-
                                 <label title="Taghældning" for="Input_1745136595">
                                     Taghældning
                                 </label>
@@ -176,14 +151,10 @@
                                 <span class="field-validation-valid"
                                       data-valmsg-for="Taghaeldning_2361360b2c6d423386abf91279296f4c"
                                       data-valmsg-replace="true"></span>
-
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-md-12 col-xs-12">
-
-
                                 <label title="Redskabsrum bredde" for="Input_1745136595">
                                     Redskabsrum bredde
                                 </label>
@@ -214,13 +185,10 @@
                                 <span class="field-validation-valid"
                                       data-valmsg-for="Redskabsrum_bredde_a923dd7e7d144d9f9157a90d184a3872"
                                       data-valmsg-replace="true"></span>
-
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12 col-xs-12">
-
-
                                 <label title="Redskabsrum bredde" for="Input_1745136595">
                                     Redskabsrum længde
                                 </label>
@@ -252,48 +220,34 @@
                                 <span class="field-validation-valid"
                                       data-valmsg-for="Redskabsrum_laengde_f1cea9650faa485ca81742dcbc98b93c"
                                       data-valmsg-replace="true"></span>
-
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-md-12 col-xs-12">
                                 <hr>
                             </div>
                         </div>
-
-
                         <div class="form-group">
                             <div class="col-md-6 col-xs-12">
-
                                 <div class="col-md-6 col-xs-12">
                                     <input type="Submit" name="SubmitRaised" title="Submit" value="Submit"
                                            class="btn btn-primary">
-
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-
     </div>
     </div>
     </div>
-
-
     </div>
     </div>
 </section>
 <br>
-
-
 <c:if test="${requestScope.error!= null}">
     <h2>Error ! </h2>
     ${requestScope.error}

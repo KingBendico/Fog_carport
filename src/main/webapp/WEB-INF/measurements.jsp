@@ -18,9 +18,11 @@
 <section>
     <div align="center">
         <h5>
-            Carport bredde: ${sessionScope.carportWidth} <% if (request.getParameter("Carport_bredde") != "") { %> cm <% } %>
+            Carport bredde: ${sessionScope.carportWidth} <% if (request.getParameter("Carport_bredde") != "") { %>
+            cm <% } %>
             <br>
-            Carport længde: ${sessionScope.carportLength} <% if (request.getParameter("Carport_laengde") != "") { %> cm <% } %>
+            Carport længde: ${sessionScope.carportLength} <% if (request.getParameter("Carport_laengde") != "") { %>
+            cm <% } %>
             <br>
             Tag: ${sessionScope.roof}
             <% if (request.getParameter("Taghaeldning") != null) { %>
@@ -28,24 +30,24 @@
             Taghældning: ${sessionScope.roofPitch} grader
             <% } %>
             <br>
-            <% if (request.getParameter("Redskabsrum_bredde") != "") { %>Redskabsrum bredde: ${sessionScope.shedWidth} cm <% } %>
+            <% if (request.getParameter("Redskabsrum_bredde") != "") { %>Redskabsrum bredde: ${sessionScope.shedWidth}
+            cm <% } %>
             <br>
-            <% if (request.getParameter("Redskabsrum_laengde") != "") { %>Redskabsrum længde: ${sessionScope.shedLength}  cm <% } %>
+            <% if (request.getParameter("Redskabsrum_laengde") != "") { %>Redskabsrum længde: ${sessionScope.shedLength}
+            cm <% } %>
         </h5>
     </div>
 </section>
 <br>
 <div align="center">
     ${sessionScope.svgdrawing}
+    <div class="col-sm-4">
+        <form action="FrontController" method="POST">
+            <input type="hidden" name="target" value="isLoggedOn">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Bestil Carport</button>
+        </form>
 
-            <div class="col-sm-4">
-
-                <form action="FrontController" method="POST">
-                    <input type="hidden" name="target" value="isLoggedOn">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Bestil Carport</button>
-                </form>
-
-            </div>
+    </div>
 </div>
 <br>
 

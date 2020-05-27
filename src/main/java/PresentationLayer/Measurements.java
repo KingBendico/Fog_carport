@@ -23,7 +23,6 @@ public class Measurements extends Command {
 
         // only for carportFlat
         session.setAttribute("roofPitch", request.getParameter("Taghaeldning"));
-
         session.setAttribute("shedWidth", request.getParameter("Redskabsrum_bredde"));
         session.setAttribute("shedLength", request.getParameter("Redskabsrum_laengde"));
 
@@ -42,15 +41,15 @@ public class Measurements extends Command {
             roofPitch = Integer.parseInt(request.getParameter("Taghaeldning"));
             shedWidth = Integer.parseInt(request.getParameter("Redskabsrum_bredde"));
             shedLength = Integer.parseInt(request.getParameter("Redskabsrum_laengde"));
-        }catch (NumberFormatException ex) {}
+        } catch (NumberFormatException ex) {
+        }
 
-            //Konstruerer Carport objekter af den pågældende type
-            Carport carport = Carport.createCarport(0, 0,carportLength,carportWidth,shedLength,shedWidth,roofPitch);
+        //Konstruerer Carport objekter af den pågældende type
+        Carport carport = Carport.createCarport(0, 0, carportLength, carportWidth, shedLength, shedWidth, roofPitch);
+        session.setAttribute("carport", carport);
+        Svg svg = SvgDrawing.drawMyCarport(carport);
+        session.setAttribute("svgdrawing", svg.toString());
 
-            session.setAttribute("carport",carport);
-            Svg svg = SvgDrawing.drawMyCarport(carport);
-            session.setAttribute("svgdrawing", svg.toString());
-
-            return "measurements";
+        return "measurements";
     }
 }

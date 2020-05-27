@@ -19,7 +19,7 @@ public class OrderMapper {
             String SQL = "INSERT INTO orders (userId,status) VALUES (?,?);";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, userId);
-            ps.setString(2,"ACTIVE");
+            ps.setString(2, "ACTIVE");
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
@@ -29,23 +29,23 @@ public class OrderMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
-    public static void saveCarport(Carport carport) throws LoginSampleException{
+
+    public static void saveCarport(Carport carport) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO carport (orderId,length,width,shed_length,shed_width,slope) VALUES (?, ?, ?, ?, ?, ?);";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1,carport.getOrderId());
+            ps.setInt(1, carport.getOrderId());
             ps.setInt(2, carport.getLength());
-            ps.setInt(3,carport.getWidth());
-            ps.setInt(4,carport.getShed_length());
-            ps.setInt(5,carport.getShed_width());
-            ps.setInt(6,((CarportRaisedRoof) carport).getRoofSlope()); //Ved ikke helt om det virker
+            ps.setInt(3, carport.getWidth());
+            ps.setInt(4, carport.getShed_length());
+            ps.setInt(5, carport.getShed_width());
+            ps.setInt(6, ((CarportRaisedRoof) carport).getRoofSlope()); //Ved ikke helt om det virker
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LoginSampleException(ex.getMessage());
         }
     }
-
 
     public static ArrayList<Order> getPreviousOrder(int userId) throws SQLException {
         ArrayList<Order> previousOrders = new ArrayList<>();
@@ -73,24 +73,23 @@ public class OrderMapper {
         return previousOrders;
     }
 
-    public static Carport getCarport(int orderId) throws SQLException{
+    public static Carport getCarport(int orderId) throws SQLException {
         Carport carport;
-        try{
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM carport WHERE orderID = ?";
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setInt(1,orderId);
+            ps.setInt(1, orderId);
             ResultSet rs = ps.executeQuery();
             int length = rs.getInt("length");
             int width = rs.getInt("width");
             int shedLength = rs.getInt("shed_length");
             int shedWidth = rs.getInt("shed_width");
             int slope = rs.getInt("slope");
-            carport = Carport.createCarport(0, orderId,length,width,shedLength,shedWidth,slope);
+            carport = Carport.createCarport(0, orderId, length, width, shedLength, shedWidth, slope);
         } catch (ClassNotFoundException | SQLException | LoginSampleException ex) {
             throw new SQLException(ex.getMessage());
         }
         return carport;
     }
 }
-

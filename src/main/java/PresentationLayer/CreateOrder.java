@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 
 public class CreateOrder extends Command {
 
-
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
