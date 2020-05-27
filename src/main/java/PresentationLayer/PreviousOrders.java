@@ -11,12 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowPreviousOrders extends Command {
+public class PreviousOrders extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException{
         HttpSession session = request.getSession();
-
-
 
         return "showOrder";
     }

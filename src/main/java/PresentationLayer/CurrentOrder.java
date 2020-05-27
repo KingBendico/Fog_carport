@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ShowCurrentOrder extends Command{
+public class CurrentOrder extends Command{
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();

@@ -16,12 +16,12 @@
                     <h3>Mine ordrer</h3>
                     <p>
                     <form action="FrontController" method="POST">
-                        <input type="hidden" name="target" value="currentOrder">
+                        <input type="hidden" name="target" value="CurrentOrder">
                         <button class="btn btn-primary btn-block" class="submit">Se aktive ordrer</button>
                     </form>
                         <br>
                     <form action="FrontController" method="POST">
-                        <input type="hidden" name="target" value="previousOrders">
+                        <input type="hidden" name="target" value="PreviousOrders">
                         <button class="btn btn-primary btn-block" class="submit">Se udførte ordrer</button>
                     </form>
                         <br>
