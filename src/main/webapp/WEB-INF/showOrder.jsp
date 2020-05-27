@@ -18,17 +18,18 @@
                     <th scope="col">Vare #</th>
                     <th scope="col">Beskrivelse</th>
                     <th scope="col">Antal</th>
-     <%--               <th scope="col">Dato</th> --%>
+                    <th scope="col">Dato</th>
+
                 </tr>
                 </thead>
                 <tbody>
-                <c:set var="materialList" value="${sessionScope.carport.materialList}"/>
-                <c:forEach var="materials" items="${sessionScope.carport.materialList }">
+                <c:set var="materialList" value="${sessionScope.carport.toString()}"/>
+                <c:forEach var="materials" items="${materialList.blahblah.blahblah  }">
                     <tr>
-                        <td>${materials.value.materialId}</td>
-                        <td>${materials.value.description}</td>
-                        <td>${materials.value.count}</td>
-<%--                        <td>${materials.value.}</td>--%>
+                        <td>${materials.key.description}</td>
+                        <td>${materials.key.description}</td>
+                        <td>${materials.key.description}</td>
+                        <td>${materials.key.description}</td>
 
                     </tr>
                 </c:forEach>
