@@ -3,6 +3,9 @@
 <%--<%@include file="includes/header.jsp" %>--%>
 <%@include file="../includes/header2.jsp" %>
 
+
+
+
 <div class="card mb-4">
     <div class="card-header">
         Materialeliste
@@ -15,27 +18,37 @@
                     <th scope="col">Vare #</th>
                     <th scope="col">Beskrivelse</th>
                     <th scope="col">Antal</th>
-                    <th scope="col">Dato</th>
+     <%--               <th scope="col">Dato</th> --%>
                 </tr>
                 </thead>
                 <tbody>
-                <c:set var="materialList" value="${sessionScope.carport.toString()}"/>
-                <c:forEach var="materials" items="${materialList.blahblah.blahblah  }">
+                <c:set var="materialList" value="${sessionScope.carport.materialList}"/>
+                <c:forEach var="materials" items="${sessionScope.carport.materialList }">
                     <tr>
-                        <td>${materials.key.description}</td>
-                        <td>${materials.key.description}</td>
-                        <td>${materials.key.description}</td>
-                        <td>${materials.key.description}</td>
+                        <td>${materials.value.materialId}</td>
+                        <td>${materials.value.description}</td>
+                        <td>${materials.value.count}</td>
+<%--                        <td>${materials.value.}</td>--%>
+
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
         </div>
-    </div>
+
+
+</div>
+
+
+
+
 </div>
 <c:if test="${requestScope.error!= null}">
     <h2>Error ! </h2>
     ${requestScope.error}
 </c:if>
+</div>
+</div>
+</div>
 
 <%@include file="../includes/footer.jsp" %>

@@ -78,10 +78,7 @@ CREATE TABLE `users` (
   );
   
 INSERT INTO `users` 
-VALUES (1,'Alice@Cooper.com','pass1234',30,'Alice Cooper','60607070','Nørgaardsvej 30, DK-2800 Kgs. Lyngby'),
-(2,'hans@mail.dk','1234',30,NULL,NULL,NULL);
-
-
+VALUES (2, "Bob@Robertson.com","pass1234", "30", "Bob Robertson", "60607070", "Nørgaardsvej 30, DK-2800 Kgs. Lyngby");
 
 CREATE TABLE `orders` (
   `orderId` int NOT NULL AUTO_INCREMENT,
