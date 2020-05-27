@@ -14,7 +14,7 @@ import java.sql.Statement;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
-public class DiverseTest {
+public class UserMapperTest {
     private static Connection testConnection;
     private static String USER = "adminfog";
     private static String USERPW = "3011fog/";
@@ -45,10 +45,9 @@ public class DiverseTest {
         try (Statement stmt = testConnection.createStatement()) {
             stmt.execute("DROP TABLE IF EXISTS users;");
             stmt.execute("CREATE TABLE users LIKE fogcarport_db.users;");
-           // stmt.execute("INSERT INTO users VALUES (1,'Alice@Cooper.com','pass1234',30,'Alice Cooper','60607070','Nørgaardsvej 30, DK-2800 Kgs. Lyngby')");
-            stmt.execute("insert into users select * from fogcarport_db.users");
-        }
-        catch (SQLException ex){
+            // stmt.execute("INSERT INTO users VALUES (1,'Alice@Cooper.com','pass1234',30,'Alice Cooper','60607070','Nørgaardsvej 30, DK-2800 Kgs. Lyngby')");
+            stmt.execute("INSERT INTO users SELECT * FROM fogcarport_db.users");
+        } catch (SQLException ex) {
             System.out.println("Could not open connection to database: " + ex.getMessage());
         }
     }
@@ -56,60 +55,36 @@ public class DiverseTest {
     @Test
     public void testSetUpOK() {
         // Just check that we have a connection.
-        assertNotNull( testConnection );
+        assertNotNull(testConnection);
     }
 
-
     @Test
-    public void testLogin01() throws LoginSampleException {
+    public void testLogin() throws LoginSampleException {
         // Can we log in
-        User user = UserMapper.login( "jens@somewhere.com", "jensen" );
-        assertTrue( user != null );
+        User user = UserMapper.login("hans@mail.dk", "1234");
+        assertTrue(user != null);
     }
 
-    @Test( expected = LoginSampleException.class )
-    public void testLogin02() throws LoginSampleException {
+    @Test(expected = LoginSampleException.class)
+    public void testWrongPassword() throws LoginSampleException {
         // We should get an exception if we use the wrong password
-        User user = UserMapper.login( "jens@somewhere.com", "larsen" );
+        User user = UserMapper.login("hans@mail.dk", "hansen");
+        assertNotEquals("larsen", user);
     }
 
     @Test
-    public void testLogin03() throws LoginSampleException {
+    public void testRole() throws LoginSampleException {
         // Alice is supposed to be a customer which is known by roleId "30".
-        User user = UserMapper.login( "Alice@Cooper.com", "pass1234" );
-        assertEquals( "30", user.getRole() );
+        User user = UserMapper.login("Alice@Cooper.com", "pass1234");
+        assertEquals("30", user.getRole());
     }
 
-    @org.junit.Test
-    public void testCreateUser01() throws LoginSampleException {
-        // Can we create a new user - Notice, if login fails, this will fail
-        // but so would login01, so this is OK
-        User original = new User( "king@kong.com", "uhahvorhemmeligt", "konge" );
-        UserMapper.createUser( original );
-        User retrieved = UserMapper.login( "king@kong.com", "uhahvorhemmeligt" );
-        assertEquals( "konge", retrieved.getRole() );
+    @Test
+    public void testCreateUser() throws LoginSampleException {
+        // Can we create a new user
+        User original = new User("adminfog@fog.com", "adminfog", "10");
+        UserMapper.createUser(original);
+        User retrieved = UserMapper.login("adminfog@fog.com", "adminfog");
+        assertEquals("10", retrieved.getRole());
     }
-
 }
-
-/*
-
-@Before
-    public void beforeEachTest() {
-        // reset test database
-        try (Statement stmt = testConnection.createStatement()) {
-            stmt.execute("DROP SCHEMA IF EXISTS fogcarport_db_test;");
-            stmt.execute("CREATE SCHEMA  IF NOT EXISTS fogcarport_db_test;");
-            stmt.execute("USE fogcarport_db_test;");
-            stmt.execute("INSERT INTO users VALUES (1,'Alice@Cooper.com','pass1234',30,'Alice Cooper','60607070','Nørgaardsvej 30, DK-2800 Kgs. Lyngby')");
-            //  stmt.execute("insert into users select * from UsersTest");
-        }
-        catch (SQLException ex){
-            System.out.println("Could not open connection to database: " + ex.getMessage());
-        }
-    }
-
-
-
-
-*/
