@@ -13,8 +13,7 @@ public class SvgDrawing {
      */
     public static Svg drawMyCarport(Carport carport) {
 
-        Svg svg = new Svg(0, 0, carport.getWidth(), carport.getLength(), "0,0,800,800"); // Hvis viewbox < str på carport bliver den beskåret.
-        // Jo større carport der vælges, des større bliver hele viewboxen. Jo mindre, desto mindre bliver viewboxen.
+        Svg svg = new Svg(0, 0, carport.getWidth(), carport.getLength(), "0,0,800,800");
 
         // Diverse variabler
         int strapThickness = 4;
