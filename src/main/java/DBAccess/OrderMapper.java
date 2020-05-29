@@ -11,8 +11,18 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * The type Order mapper.
+ */
 public class OrderMapper {
 
+    /**
+     * Create order int.
+     *
+     * @param userId the user id
+     * @return the int
+     * @throws LoginSampleException the login sample exception
+     */
     public static int createOrder(int userId) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
@@ -30,6 +40,12 @@ public class OrderMapper {
         }
     }
 
+    /**
+     * Save carport.
+     *
+     * @param carport the carport
+     * @throws LoginSampleException the login sample exception
+     */
     public static void saveCarport(Carport carport) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
@@ -47,6 +63,13 @@ public class OrderMapper {
         }
     }
 
+    /**
+     * Gets previous order.
+     *
+     * @param userId the user id
+     * @return the previous order
+     * @throws SQLException the sql exception
+     */
     public static ArrayList<Order> getPreviousOrder(int userId) throws SQLException {
         ArrayList<Order> previousOrders = new ArrayList<>();
         try {
@@ -73,6 +96,13 @@ public class OrderMapper {
         return previousOrders;
     }
 
+    /**
+     * Gets carport.
+     *
+     * @param orderId the order id
+     * @return the carport
+     * @throws SQLException the sql exception
+     */
     public static Carport getCarport(int orderId) throws SQLException {
         Carport carport;
         try {

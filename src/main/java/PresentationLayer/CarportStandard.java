@@ -5,6 +5,9 @@ import FunctionLayer.LoginSampleException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * The type Carport standard.
+ */
 public class CarportStandard extends Command {
 
     @Override

@@ -6,6 +6,9 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * The type Command.
+ */
 abstract class Command {
 
     private static HashMap<String, Command> commands;
@@ -30,6 +33,12 @@ abstract class Command {
         commands.put("isLoggedOn", new IsLoggedOn());
     }
 
+    /**
+     * From command.
+     *
+     * @param request the request
+     * @return the command
+     */
     static Command from(HttpServletRequest request) {
         String targetName = request.getParameter("target");
         if (commands == null) {
@@ -38,6 +47,14 @@ abstract class Command {
         return commands.getOrDefault(targetName, new UnknownCommand());   // unknowncommand er default.
     }
 
+    /**
+     * Execute string.
+     *
+     * @param request  the request
+     * @param response the response
+     * @return the string
+     * @throws LoginSampleException the login sample exception
+     */
     abstract String execute(HttpServletRequest request, HttpServletResponse response)
             throws LoginSampleException;
 }

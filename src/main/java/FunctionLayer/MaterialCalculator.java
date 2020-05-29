@@ -2,8 +2,18 @@ package FunctionLayer;
 
 import java.util.HashMap;
 
+/**
+ * The type Material calculator.
+ */
 public class MaterialCalculator {
 
+    /**
+     * Material list hash map.
+     *
+     * @param carport the carport
+     * @return the hash map
+     * @throws LoginSampleException the login sample exception
+     */
     public static HashMap MaterialList(Carport carport) throws LoginSampleException {
         double length = carport.getLength();
         int width = carport.getWidth();

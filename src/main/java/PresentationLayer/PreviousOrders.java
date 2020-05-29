@@ -11,6 +11,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Previous orders.
+ */
 public class PreviousOrders extends Command {
 
     @Override

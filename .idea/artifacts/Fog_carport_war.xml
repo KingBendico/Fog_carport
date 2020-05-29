@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="projektskabelon-1.0-SNAPSHOT.war">
+    <root id="archive" name="Fog_carport-1.0.war">
       <element id="artifact" artifact-name="Fog_carport:war exploded" />
     </root>
   </artifact>

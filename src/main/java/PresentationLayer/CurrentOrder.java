@@ -10,6 +10,9 @@ import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * The type Current order.
+ */
 public class CurrentOrder extends Command {
 
     @Override

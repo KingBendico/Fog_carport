@@ -1,7 +1,16 @@
 package FunctionLayer;
 
+/**
+ * The type Svg drawing.
+ */
 public class SvgDrawing {
 
+    /**
+     * Draw my carport svg.
+     *
+     * @param carport the carport
+     * @return the svg
+     */
     public static Svg drawMyCarport(Carport carport) {
 
         Svg svg = new Svg(0, 0, carport.getWidth(), carport.getLength(), "0,0,800,800"); // Hvis viewbox < str på carport bliver den beskåret.

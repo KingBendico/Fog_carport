@@ -10,8 +10,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * The type Data mapper.
+ */
 public class DataMapper {
 
+    /**
+     * Gets materials.
+     *
+     * @return the materials
+     * @throws LoginSampleException the login sample exception
+     */
     public static HashMap getMaterials() throws LoginSampleException {
 
         HashMap<Integer, Materials> materials = new HashMap<>();

@@ -7,6 +7,11 @@ package FunctionLayer;
  */
 public class LoginSampleException extends Exception {
 
+    /**
+     * Instantiates a new Login sample exception.
+     *
+     * @param msg the msg
+     */
     public LoginSampleException(String msg) {
         super(msg);
     }

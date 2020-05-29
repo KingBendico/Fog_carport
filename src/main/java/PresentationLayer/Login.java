@@ -12,6 +12,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
+/**
+ * The type Login.
+ */
 public class Login extends Command {
 
     @Override

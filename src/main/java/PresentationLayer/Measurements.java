@@ -11,6 +11,9 @@ import java.util.HashMap;
 
 import FunctionLayer.*;
 
+/**
+ * The type Measurements.
+ */
 // @WebServlet(name = "Measurements", urlPatterns = {"/Measurements"})
 public class Measurements extends Command {
 
