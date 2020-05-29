@@ -36,6 +36,16 @@
             </table>
         </div>
 
+        <br>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                Tegning af carport
+            </div>
+             <br>
+            ${sessionScope.svgdrawing}
+        </div>
+
 
 </div>
 
